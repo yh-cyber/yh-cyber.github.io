@@ -67,5 +67,31 @@
       <a href="https://www.linkedin.com/in/yusyrahossain/">LinkedIn</a>
     </p>
   </div>
+
+  <canvas id="asciiCanvas"></canvas>
+
+  <script>
+    const canvas = document.getElementById('asciiCanvas');
+    const ctx = canvas.getContext('2d');
+
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    ctx.font = "8px monospace";
+    ctx.textBaseline = "top";
+
+    fetch('vizo-particles.json')
+      .then(res => res.json())
+      .then(data => {
+        data.particles.forEach(p => {
+          const x = p.originX * canvas.width;
+          const y = p.originY * canvas.height;
+
+          ctx.fillStyle = `rgb(${p.r}, ${p.g}, ${p.b})`;
+          ctx.fillText(p.char, x, y);
+        });
+      });
+  </script>
+  
 </body>
 </html>
