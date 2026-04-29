@@ -73,49 +73,25 @@
   <script>
     const canvas = document.getElementById('asciiCanvas');
     const ctx = canvas.getContext('2d');
-    
+
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
-    
+
     ctx.font = "8px monospace";
     ctx.textBaseline = "top";
-    
-    let particles = [];
-    
+
     fetch('vizo-particles.json')
       .then(res => res.json())
       .then(data => {
-        particles = data.particles.map(p => ({
-          ...p,
-          x: p.originX * canvas.width,
-          y: p.originY * canvas.height,
-          vx: (Math.random() - 0.5) * 0.5, // random movement
-          vy: (Math.random() - 0.5) * 0.5
-        }));
-    
-        animate();
+        data.particles.forEach(p => {
+          const x = p.originX * canvas.width;
+          const y = p.originY * canvas.height;
+
+          ctx.fillStyle = `rgb(${p.r}, ${p.g}, ${p.b})`;
+          ctx.fillText(p.char, x, y);
+        });
       });
-    
-    function animate() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-    
-      particles.forEach(p => {
-        // move
-        p.x += p.vx;
-        p.y += p.vy;
-    
-        // bounce off edges
-        if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
-        if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
-    
-        // draw
-        ctx.fillStyle = `rgb(${p.r}, ${p.g}, ${p.b})`;
-        ctx.fillText(p.char, p.x, p.y);
-      });
-    
-      requestAnimationFrame(animate);
-    }
-    </script>
+  </script>
 
 </body>
 </html>
