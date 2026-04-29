@@ -1,3 +1,5 @@
 # First Iteration of Personal Website
 
-ummm working on this
+## How it runs
+- Static HTML
+- Github Pages

@@ -41,6 +41,21 @@
     a {
       color: #60a5fa;
     }
+
+    #asciiFrame {
+      position: fixed;
+      right: 0;
+      top: 0;
+      width: 40%;
+      height: 100%;
+      border: none;
+    }
+
+    /* optional: keep your content from going under it */
+    .container {
+      width: 60%;
+    }
+    
   </style>
 </head>
 
@@ -68,30 +83,9 @@
     </p>
   </div>
 
-  <canvas id="asciiCanvas"></canvas>
+  <iframe src="vizo-particles.html" id="asciiFrame"></iframe>
 
-  <script>
-    const canvas = document.getElementById('asciiCanvas');
-    const ctx = canvas.getContext('2d');
 
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-
-    ctx.font = "8px monospace";
-    ctx.textBaseline = "top";
-
-    fetch('vizo-particles.json')
-      .then(res => res.json())
-      .then(data => {
-        data.particles.forEach(p => {
-          const x = p.originX * canvas.width;
-          const y = p.originY * canvas.height;
-
-          ctx.fillStyle = `rgb(${p.r}, ${p.g}, ${p.b})`;
-          ctx.fillText(p.char, x, y);
-        });
-      });
-  </script>
 
 </body>
 </html>
