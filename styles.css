@@ -8,6 +8,7 @@ body {
 
 h1 {
     font-family: 'Tangerine', cursive;
+    text-shadow: 4px 4px 4px #aaa;
     font-size: 72px;
     margin: 0;
     line-height: 1;
@@ -17,4 +18,11 @@ h1 {
     margin: 0 auto;
     padding: 60px 20px;
     width: 80%;
+}
+
+.footer {
+    text-align: center;
+    padding: 20px;
+    background: #1e293b;
+    color: #94a3b8;
 }
