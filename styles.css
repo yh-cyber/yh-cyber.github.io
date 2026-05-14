@@ -32,6 +32,12 @@ h1 {
     align-items: center;
     justify-content: space-between;
     width: 80%;
+    
+    min-height: 100vh;
+
+    padding: 0 10%;
+
+    gap: 60px;
 }
 
 .hero-text {
