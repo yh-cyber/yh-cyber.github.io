@@ -14,6 +14,7 @@ body {
 
 h1 {
     font-family: "Turret Road", sans-serif;
+    text-shadow: 4px 4px 4px var(--accent);
     font-size: 75px;
     margin: 0;
     line-height: 1;
