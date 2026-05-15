@@ -51,12 +51,12 @@ h1 {
 
 .hero-text p {
     max-width: 500px;
-    color: #cbd5e1;
+    color: var(--white);
 }
 
 .hero-image img {
-    width: 320px;
-    height: 320px;
+    width: 300px;
+    height: 300px;
 
     object-fit: cover;
 
