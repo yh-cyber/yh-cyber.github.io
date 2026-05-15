@@ -66,13 +66,12 @@ h1 {
 }
 
 #typing-text {
-    color: #CC99CC;
-    border-right: 2px solid #CC99CC;
+    color: var(--white);
+    border-right: 2px solid var(--accent);
     padding-right: 5px;
 
     animation: blink 0.7s infinite;
-
-    display: inline-block;
+    
     min-width: 350px;
 }
 
