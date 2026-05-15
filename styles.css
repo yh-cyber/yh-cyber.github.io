@@ -14,8 +14,8 @@ body {
 
 h1 {
     font-family: "Turret Road", sans-serif;
-    text-shadow: 4px 4px 4px #aaa;
-    font-size: 72px;
+    text-shadow: 4px 4px 4px var(--accent);
+    font-size: 75px;
     margin: 0;
     line-height: 1;
 }
@@ -45,7 +45,7 @@ h1 {
 }
 
 .hero-text h2 {
-    font-size: 28px;
+    font-size: 30px;
     font-weight: 400;
 }
 
@@ -71,7 +71,7 @@ h1 {
     padding-right: 5px;
 
     animation: blink 0.7s infinite;
-    
+
     min-width: 350px;
 }
 
