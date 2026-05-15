@@ -1,7 +1,8 @@
 const words = [
-    "CS Student @ UofT",
+    "CS Student at UofT St.George",
     "Aspiring ML Engineer",
-    "Math Enthusiast"
+    "In Love with Mathematics",
+    "Coffee Enthusiast",
 ];
 
 let wordIndex = 0;
