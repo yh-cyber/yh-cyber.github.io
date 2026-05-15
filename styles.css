@@ -1,5 +1,5 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: "Kode Mono", monospace;
     margin: 0;
     background: #0f172a;
     color: #e2e8f0;
@@ -7,17 +7,11 @@ body {
 }
 
 h1 {
-    font-family: 'Kode Mono';
+    font-family: "Rubik Glitch", system-ui;
     text-shadow: 4px 4px 4px #aaa;
     font-size: 72px;
     margin: 0;
     line-height: 1;
-}
-
-.container {
-    margin: 0 auto;
-    padding: 60px 20px;
-    width: 80%;
 }
 
 .footer {
@@ -40,12 +34,6 @@ h1 {
 
 .hero-text {
     flex: 1;
-}
-
-.hero-text h1 {
-    font-family: 'Oxanium';
-    font-size: 100px;
-    margin-bottom: 10px;
 }
 
 .hero-text h2 {
