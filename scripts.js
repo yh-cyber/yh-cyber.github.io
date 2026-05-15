@@ -1,5 +1,5 @@
 const words = [
-    "CS Student",
+    "CS Student @ UofT",
     "Aspiring ML Engineer",
     "Math Enthusiast"
 ];

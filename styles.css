@@ -71,6 +71,9 @@ h1 {
     padding-right: 5px;
 
     animation: blink 0.7s infinite;
+
+    display: inline-block;
+    min-width: 350px;
 }
 
 @keyframes blink {
