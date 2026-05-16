@@ -23,7 +23,7 @@ h1 {
 
 .footer {
     text-align: center;
-    padding: 20px;
+    padding: 15px;
     background: #1e293b;
     color: #94a3b8;
 }
@@ -80,4 +80,31 @@ h1 {
     50% {
         border-color: transparent;
     }
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 15px 40px;
+
+    background: #1e293b;
+    backdrop-filter: blur(10px);
+}
+
+.nav-links a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: var(--white);
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--accent);
 }
