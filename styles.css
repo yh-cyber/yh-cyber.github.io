@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 :root {
     --background: #0f172a;
     --white: #e2e8f0;
@@ -91,8 +95,6 @@ h1 {
     display: flex;
     justify-content: space-between;
     align-items: center;
-
-    padding: 15px 40px;
 
     background: #1e293b;
     backdrop-filter: blur(10px);
