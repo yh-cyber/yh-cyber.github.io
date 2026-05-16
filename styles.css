@@ -114,7 +114,7 @@ h1 {
 
 .nav-links a.active {
   background-color: var(--accent);
-  color:var(--white);
+  color: var(--white);
 }
 
 .logo img {
