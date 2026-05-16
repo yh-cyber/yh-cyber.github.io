@@ -99,22 +99,15 @@ h1 {
     z-index: 1000;
 }
 
-.nav-links {
-    display: flex;
-    float: right;
-    gap: 20px;
-    text-align: center;
+.nav-links a {
+    margin-left: 20px;
+    text-decoration: none;
     color: var(--white);
-    font-size: 18px;
+    transition: 0.3s;
 }
 
 .nav-links a:hover {
     color: var(--accent);
-}
-
-.nav-links a.active {
-  background-color: var(--accent);
-  color: var(--white);
 }
 
 .logo img {
