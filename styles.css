@@ -96,6 +96,8 @@ h1 {
 
     background: #1e293b;
     backdrop-filter: blur(10px);
+
+    z-index: 1000;
 }
 
 .nav-links a {
@@ -107,4 +109,9 @@ h1 {
 
 .nav-links a:hover {
     color: var(--accent);
+}
+
+.logo img {
+    height: 50px;
+    width: auto;
 }
