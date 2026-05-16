@@ -105,7 +105,7 @@ h1 {
     gap: 20px;
     text-align: center;
     color: var(--white);
-    size: 18px;
+    font-size: 18px;
 }
 
 .nav-links a:hover {
