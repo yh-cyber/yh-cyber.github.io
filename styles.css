@@ -108,10 +108,11 @@ h1 {
 }
 
 .logo img {
-    height: 35px;
+    height: 30px;
     width: auto;
     float: left;
-    margin-right: 30px;
+    margin-right: 10px;
+    vertical-align: middle;
 }
 
 .socials {
