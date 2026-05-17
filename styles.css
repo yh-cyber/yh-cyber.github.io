@@ -83,30 +83,27 @@ h1 {
 }
 
 .navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    
-    padding: 15px 30px;
+    overflow: hidden;
     background: #1e293b;
-    backdrop-filter: blur(10px);
-
-    z-index: 1000;
 }
 
-.nav-links a {
-    text-decoration: none;
+.navbar a {
     color: var(--white);
     transition: 0.3s;
+    float: left;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
 }
 
-.nav-links a:hover {
+.navbar a:hover {
     color: var(--accent);
+}
+
+.navbar a.active {
+  background-color: var(--accent);
+  color: white;
 }
 
 .logo img {
