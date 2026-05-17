@@ -108,7 +108,12 @@ h1 {
 }
 
 .logo img {
-    height: 25px;
+    height: 30px;
     width: auto;
+    float: left;
     margin-right: 40px;
+}
+
+.socials {
+    float: right;
 }
