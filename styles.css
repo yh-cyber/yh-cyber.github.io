@@ -85,7 +85,6 @@ h1 {
 .navbar {
     overflow: hidden;
     background: #1e293b;
-    z-index: 1000;
 }
 
 .navbar a {
@@ -97,7 +96,6 @@ h1 {
     text-decoration: none;
     font-size: 17px;
     margin-top: 7px;
-    z-index: 1000;
 }
 
 .navbar a:hover {
