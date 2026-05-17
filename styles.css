@@ -14,6 +14,7 @@ body {
 }
 
 .footer {
+    margin-top: 50px;
     text-align: center;
     padding: 10px;
     background: #1e293b;
@@ -60,20 +61,20 @@ html {
 
 .socials {
     float: right;
-    margin-right: 32px;
+    margin-right: 45px;
 }
 
 .hero {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-between; /* Add space between hero text and image */
     width: 80%;
 
-    min-height: 80vh;
+    min-height: 65vh;
 
-    padding: 0 10%;
+    padding: 0 10%; 
 
-    gap: 60px;
+    gap: 60px; /* Add gap between hero text and image */
 }
 
 .hero-text h1 {
@@ -128,9 +129,6 @@ html {
 .about {
     align-items: center;
     width: 80%;
-
-    min-height: 80vh;
-
     padding: 0 10%;
 }
 
@@ -179,7 +177,7 @@ html {
 .cs_projects {
     align-items: center;
     width: 80%;
-    margin-top: 0;
+    margin-top: 75px;
     padding: 0 10%;
 }
 
@@ -196,4 +194,28 @@ html {
 .cs_projects p {
     color: var(--white);
     font-size: 18px;
+    text-align: full-justify;
+}
+
+.passion_projects {
+    align-items: center;
+    width: 80%;
+    margin-top: 75px;
+    padding: 0 10%;
+}
+
+.passion_projects h2 {
+    font-family: "Turret Road", sans-serif;
+    font-size: 50px;
+    color: var(--accent);
+    text-decoration: underline var(--white) wavy 2px;
+    text-underline-offset: 5px;
+    margin: 0;
+    padding: 0;
+}
+
+.passion_projects p {
+    color: var(--white);
+    font-size: 18px;
+    text-align: full-justify;
 }
