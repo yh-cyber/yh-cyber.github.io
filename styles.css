@@ -85,6 +85,7 @@ h1 {
 .navbar {
     overflow: hidden;
     background: #1e293b;
+    z-index: 1000;
 }
 
 .navbar a {
@@ -92,10 +93,11 @@ h1 {
     transition: 0.3s;
     float: left;
     text-align: center;
-    padding: 14px 16px;
+    padding: 13px 13px;
     text-decoration: none;
     font-size: 17px;
-    margin-top: 4px;
+    margin-top: 7px;
+    z-index: 1000;
 }
 
 .navbar a:hover {
