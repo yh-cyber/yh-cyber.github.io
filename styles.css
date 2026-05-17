@@ -23,9 +23,9 @@ h1 {
 
 .footer {
     text-align: center;
-    padding: 15px;
+    padding: 10px;
     background: #1e293b;
-    color: #94a3b8;
+    color: #a0afc4;
 }
 
 .hero {
@@ -110,7 +110,7 @@ h1 {
 }
 
 .logo img {
-    height: 17px;
+    height: 25px;
     width: auto;
     margin-right: 40px;
 }
