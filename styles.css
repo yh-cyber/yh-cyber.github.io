@@ -109,6 +109,22 @@ html {
     box-shadow: 0 0 30px rgba(204,153,204,0.4);
 }
 
+#typing-text {
+    color: var(--white);
+    border-right: 2px solid var(--accent);
+    padding-right: 5px;
+
+    animation: blink 0.7s infinite;
+
+    min-width: 350px;
+}
+
+@keyframes blink {
+    50% {
+        border-color: transparent;
+    }
+}
+
 .about {
     align-items: center;
     width: 80%;
@@ -133,18 +149,51 @@ html {
     font-size: 18px;
 }
 
-#typing-text {
-    color: var(--white);
-    border-right: 2px solid var(--accent);
-    padding-right: 5px;
-
-    animation: blink 0.7s infinite;
-
-    min-width: 350px;
+.skills{
+    margin-top: 40px;
+    overflow: hidden;
+    padding: 20px 0;
+    border-top: 1px solid #1e293b;
+    border-bottom: 1px solid #1e293b;
 }
 
-@keyframes blink {
-    50% {
-        border-color: transparent;
+.skills-content {
+    display: flex;
+    gap: 40px;
+    animation: marquee 15s linear infinite;
+    white-space: nowrap;
+    font-size: 18px;
+    color: var(--white);
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(0);
     }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.cs_projects {
+    align-items: center;
+    width: 80%;
+    margin-top: 0;
+    padding: 0 10%;
+}
+
+.cs_projects h2 {
+    font-family: "Turret Road", sans-serif;
+    font-size: 50px;
+    color: var(--accent);
+    text-decoration: underline var(--white) wavy 2px;
+    text-underline-offset: 5px;
+    margin: 0;
+    padding: 0;
+}
+
+.cs_projects p {
+    color: var(--white);
+    font-size: 18px;
 }
