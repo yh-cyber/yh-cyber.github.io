@@ -111,10 +111,11 @@ h1 {
     height: 30px;
     width: auto;
     float: left;
-    margin-right: 10px;
+    margin-right: 13px;
     vertical-align: middle;
 }
 
 .socials {
     float: right;
+    margin-right: 15px;
 }
