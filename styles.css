@@ -95,6 +95,7 @@ h1 {
     padding: 14px 16px;
     text-decoration: none;
     font-size: 17px;
+    margin-top: 4px;
 }
 
 .navbar a:hover {
@@ -109,4 +110,5 @@ h1 {
 .logo img {
     height: 50px;
     width: auto;
+    margin-right: 40px;
 }
