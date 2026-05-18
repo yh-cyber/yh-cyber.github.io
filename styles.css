@@ -69,6 +69,12 @@ html {
     margin-right: 45px;
 }
 
+.socials a {
+    color: var(--white);
+    margin-left: 15px;
+    transition: 0.3s;
+}
+
 .hero {
     display: flex;
     align-items: center;
@@ -225,4 +231,10 @@ html {
     color: var(--white);
     font-size: 18px;
     text-align: full-justify;
+}
+
+.social-link a {
+    color: var(--accent);
+    text-decoration: none;
+    transition: 0.3s;
 }
