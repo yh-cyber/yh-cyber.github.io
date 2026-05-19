@@ -38,3 +38,29 @@ function typeEffect() {
 }
 
 typeEffect();
+
+
+const carousel = document.getElementById("projectCarousel");
+
+const nextBtn = document.getElementById("nextBtn");
+const prevBtn = document.getElementById("prevBtn");
+
+let scrollAmount = 0;
+
+nextBtn.addEventListener("click", () => {
+
+    scrollAmount += 150;
+
+    carousel.style.transform = `translateX(-${scrollAmount}px)`;
+});
+
+prevBtn.addEventListener("click", () => {
+
+    scrollAmount -= 150;
+
+    if (scrollAmount < 0) {
+        scrollAmount = 0;
+    }
+
+    carousel.style.transform = `translateX(-${scrollAmount}px)`;
+});

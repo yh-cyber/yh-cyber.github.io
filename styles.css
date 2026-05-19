@@ -2,6 +2,8 @@
     --background: #0f172a;
     --white: #e2e8f0;
     --accent: #ee6c4d;
+    --navback:#1e293b;
+    --text-secondary: #b2c3da;
 }
 
 body {
@@ -17,8 +19,8 @@ body {
     margin-top: 50px;
     text-align: center;
     padding: 10px;
-    background: #1e293b;
-    color: #a0afc4;
+    background: var(--navback);
+    color: var(--text-secondary);
 }
 
 html {
@@ -32,7 +34,7 @@ html {
     width: 100%;
 
     z-index: 1000;
-    background: #1e293b;
+    background: var(--navback);
 }
 
 .navbar a {
@@ -160,6 +162,13 @@ html {
     font-size: 18px;
 }
 
+.social-link a {
+    color: var(--accent);
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+
 .skills{
     margin-top: 40px;
     overflow: hidden;
@@ -210,6 +219,94 @@ html {
     text-align: full-justify;
 }
 
+.carousel-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+    gap:20px;
+}
+
+.arrow-btn {
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 50%;
+    background: var(--navback);
+    color: var(--accent);
+    font-size: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.arrow-btn:hover {
+    background: var(--accent);
+    color: var(--navback);
+}
+
+.carousel-container {
+    overflow-x: hidden;
+    overflow-y: visible;
+    padding-top: 10px;
+}
+
+.project-carousel {
+    display: flex;
+    gap: 30px;
+    transition: transform 0.5s ease;
+}
+
+.project-card {
+    min-width: 350px;
+    background: var(--navback);
+    border: 1px solid var(--white);
+    border-radius: 20px; 
+    /* Removed overflow:hidden */
+    text-decoration: none;
+    backdrop-filter: blur(10px);
+    transition: 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--accent);
+    box-shadow: 0 0 25px rgba(204,153,204,0.4);
+}
+
+.project-card img {
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+}
+
+.project-info {
+    padding: 25px;
+}
+
+.project-info h3 {
+    color: var(--white);
+    margin-bottom: 10px;
+    font-size: 24px;
+}
+
+.project-info p {
+    color: var(--text-secondary);
+    line-height: 1.7;
+}
+
+/** for phones and tablets **/
+@media (max-width: 768px) {
+    .project-card {
+        min-width: 300px;
+    }
+    .section-header {
+        flex-direction: column;
+        gap: 20px;
+        align-items: flex-start;
+    }
+}
+
+
 .passion_projects {
     align-items: center;
     width: 80%;
@@ -231,10 +328,4 @@ html {
     color: var(--white);
     font-size: 18px;
     text-align: full-justify;
-}
-
-.social-link a {
-    color: var(--accent);
-    text-decoration: none;
-    transition: 0.3s;
 }
