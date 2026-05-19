@@ -1,3 +1,4 @@
+// Typewriter Effect
 const words = [
     "CS Student at UofT St.George",
     "Aspiring ML Engineer",
@@ -40,8 +41,8 @@ function typeEffect() {
 typeEffect();
 
 
+// Carousel Functionality
 const carousel = document.getElementById("projectCarousel");
-
 const nextBtn = document.getElementById("nextBtn");
 const prevBtn = document.getElementById("prevBtn");
 
