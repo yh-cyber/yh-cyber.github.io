@@ -173,8 +173,12 @@ html {
     transition: 0.3s;
 }
 
+.skills-header h3 {
+    margin-top: 45px;
+    font-size: 23px;
+}
+
 .skills{
-    margin-top: 40px;
     overflow: hidden;
     padding: 20px 0;
     border-top: 1px solid #1e293b;
