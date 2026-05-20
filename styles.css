@@ -284,17 +284,12 @@ html {
     box-shadow: 0 0 25px rgba(204,153,204,0.4);
 }
 
-.project-card img {
-    width: 100%;
-    height: 100px;
-    object-fit: cover;
-}
-
 .project-info {
     padding: 25px;
 }
 
 .project-info h3 {
+    margin-top: 13px;
     color: var(--white);
     margin-bottom: 10px;
     font-size: 24px;
@@ -304,6 +299,12 @@ html {
     color: var(--text-secondary);
     line-height: 1.7;
     font-size: 16px;
+}
+
+.project-info h6 {
+    color: var(--white);
+    margin-bottom: 13px;
+    font-size: 14px;
 }
 
 @media (max-width: 768px) {
