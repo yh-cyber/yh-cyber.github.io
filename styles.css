@@ -188,10 +188,11 @@ html {
 .skills-content {
     display: flex;
     gap: 40px;
-    animation: marquee 15s linear infinite;
+    animation: marquee 20s linear infinite;
     white-space: nowrap;
     font-size: 18px;
     color: var(--white);
+    width: max-content; /* Adjust for seamless looping */
 }
 
 @keyframes marquee {
@@ -200,7 +201,7 @@ html {
     }
 
     100% {
-        transform: translateX(-50%);
+        transform: translateX(calc(-50% - 20px)); /* Adjust 20 px for seamless looping */
     }
 }
 
