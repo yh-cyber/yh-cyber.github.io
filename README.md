@@ -1,9 +1,22 @@
-# First Iteration of Personal Website
+# Personal Website
 
 ## How it runs
-- Static HTML
-- Github Pages
+- Deployed with Github Pages (Static HTML)
 - Built with HTML, CSS and Javascript
+- Resources used: W3 "How to"
 
-## WIP
-[Website](yh-cyber.github.io)
+---
+## 🌐 Live Website
+
+```text
+https://yh-cyber.github.io/
+```
+--- 
+
+## 📜 Copyright & License
+
+© 2026 Yusyra Hossain. All Rights Reserved.
+
+This website and its source code are protected under copyright law.
+
+This repository is publicly accessible for viewing and portfolio purposes only.
