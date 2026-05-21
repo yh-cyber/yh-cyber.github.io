@@ -72,6 +72,12 @@ html {
     transition: 0.3s;
 }
 
+@media (max-width: 768px) {
+    .socials {
+        display: none;
+    }
+}
+
 
 /* Hero Section */
 .hero {
@@ -338,6 +344,81 @@ html {
     text-align: full-justify;
 }
 
+
+/* Project Display Section */
+.project-display {
+    align-items: center;
+    width: 80%;
+    padding: 0 10%;
+    margin-top: 125px;
+}
+
+.home-button {
+    background: var(--navback);
+    text-decoration: none;
+    color: var(--accent);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.home-button:hover {
+    background: var(--accent);
+    color: var(--navback);
+}
+
+.project-display h1 {
+    font-family: "Turret Road", sans-serif;
+    font-size: 50px;
+    color: var(--accent);
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 15px;
+}
+
+.project-display h3 {
+    line-height: 1.9;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: 20px;
+}
+
+.gitlink a {
+    color: var(--white);
+    transition: 0.3s;
+    font-size: 35px;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.gitlink a:hover {
+    color: var(--accent);
+}
+
+.project-image {
+    display: flex;
+    justify-content: center;
+    margin-top: 35px;
+    max-width: 800px;
+}
+
+.project-display h2{
+    font-family: "Turret Road", sans-serif;
+    font-size: 23px;
+    color: var(--accent);
+    text-decoration: underline var(--white) wavy 2px;
+    text-underline-offset: 5px;
+    margin-top: 40px;
+}
 
 /* Footer */
 .footer {
