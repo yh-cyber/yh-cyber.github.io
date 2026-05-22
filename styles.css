@@ -350,7 +350,7 @@ html {
     align-items: center;
     width: 80%;
     padding: 0 10%;
-    margin-top: 150px;
+    margin-top: 125px;
 }
 
 .home-button {
@@ -410,8 +410,7 @@ html {
 }
 
 .project-image img {
-    width: 80%;
-    max-width: 800px;
+    max-width: 70%;
     height: auto;
 
     border-radius: 24px;
@@ -424,7 +423,7 @@ html {
     color: var(--accent);
     text-decoration: underline var(--white) wavy 2px;
     text-underline-offset: 5px;
-    margin-top: 40px;
+    margin-top: 60px;
 }
 
 /* Footer */
