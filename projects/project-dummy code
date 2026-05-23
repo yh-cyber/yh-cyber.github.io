@@ -48,6 +48,7 @@
         
         <div class="project-image">
             <img src="../assets/DUMMY.png" alt="----">
+            <span class="image-subtitle"> <i>Image Subtitle</i> </span>
         </div>
 
         <!--Blog-->
