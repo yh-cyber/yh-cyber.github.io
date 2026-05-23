@@ -270,6 +270,7 @@ html {
 .project-carousel {
     display: flex;
     gap: 30px;
+    align-items: stretch;
     transition: transform 0.5s ease;
 }
 
@@ -282,6 +283,8 @@ html {
     text-decoration: none;
     backdrop-filter: blur(10px);
     transition: 0.3s;
+    display: flex;
+    flex-direction: column;
 }
 
 .project-card:hover {
@@ -292,6 +295,7 @@ html {
 
 .project-info {
     padding: 25px;
+    height: 100%;
 }
 
 .project-info h3 {
@@ -305,12 +309,14 @@ html {
     color: var(--text-secondary);
     line-height: 1.7;
     font-size: 16px;
+    margin-bottom: 75px;
 }
 
 .project-info h6 {
     color: var(--white);
-    margin-bottom: 13px;
     font-size: 14px;
+    position: absolute;
+    bottom: 5px;
 }
 
 @media (max-width: 768px) {
@@ -410,7 +416,7 @@ html {
 }
 
 .project-image img {
-    max-width: 70%;
+    max-width: 60%;
     height: auto;
 
     border-radius: 24px;

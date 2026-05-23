@@ -50,19 +50,21 @@ const prevBtn = document.getElementById("prevBtn");
 let scrollAmount = 0;
 
 nextBtn.addEventListener("click", () => {
-
+    const maxScroll =
+        carousel.scrollWidth -
+        carousel.parentElement.clientWidth;
     scrollAmount += 150;
-
-    carousel.style.transform = `translateX(-${scrollAmount}px)`;
+    if (scrollAmount > maxScroll) {
+        scrollAmount = maxScroll;
+    }
+    carousel.style.transform =
+        `translateX(-${scrollAmount}px)`;
 });
 
 prevBtn.addEventListener("click", () => {
-
     scrollAmount -= 150;
-
     if (scrollAmount < 0) {
         scrollAmount = 0;
     }
-
     carousel.style.transform = `translateX(-${scrollAmount}px)`;
 });
