@@ -49,7 +49,7 @@
       </div>
 
       <!--Blog-->
-      <h2>Where it started</h2>
+      <h2>Where it Started</h2>
       <p>
         This project was the result of our biggest CSC111 assignment. After spending the entire year learning various data structures and algorithms in Python, we finally had the opportunity to apply everything we learned to a real-world problem of our choice.
       </p>
@@ -65,10 +65,12 @@
         After researching around a little, the paper "This town ain't big enough ..." by Gonzalo A. et. al., and that eventually inspired us 
         to model an ecological system of species. 
       </p>
+
+      <h2>What it Does</h2>
       
       <h2>Development</h2>
       <p>
-        Originally, we planned on modeling the seasonal interactions of all species in GTA, where users could choose location, species, and speason. 
+        Originally, we planned on modeling the seasonal interactions for all animals across multiple years and locations, where users could choose location, species, and speason. 
         This would help users detect seasonal patterns of species interactions, and hopefully uncover some interesting insights about the ecosystem.
         
         The goal for this project is to better understand patterns of species co-occurrence and interaction within an ecosystem. Studying these relationships 
@@ -80,6 +82,21 @@
         So we choose iNaturalist, a platform that allow users to users upload sightings of any animal (excluding humans) they spot, along with other information such as observation dates, species names, geographic coordinates (latitude and longitude), and associated metadata.
         iNaturalist catalogues these observations and shares them with data repositories in a clean format, which made it a great source for our project.
       </p>
+      <p>
+        So we downloaded the HUGE datasets, with more than 300,000 lines of data &#129327;. It had a lot of extra information, we knew we didn't need, like -- and --, and had missing information as well. 
+        But how would we know what we needed, and really just how would our program work? Thus began our quest of mapping out or program, and while I have no pictures of us on in the study room in the 11th floor of robarts,
+        it was quite a sight. I know not how many papers we wasted that day, but eventually we decided it would work like this: 
+        <ul>
+          <li> A custom ’Graph’ class, where each vertex represents a bird species and edges represent the likelihood of interaction between two species.</li>
+        </ul>
+      </p>
+      <p>
+        So we cleaned the dataset with the pandas library, removing irrelevant columns and filtering out observations.
+        the processing time for such a large dataset took very long, so we restricted the dataset to birds in Toronto in the year 2025. Even after doing that, there were too many observations to make an interpretable model. 
+        Thus, we capped our observations at 6000 (randomly selected from the subset of bird observations).
+      </p>
+
+      <h2>Lessons</h2>
   </section>
 
   <footer>
