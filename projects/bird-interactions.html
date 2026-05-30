@@ -53,22 +53,18 @@
 
       <h2> Overview </h2>
       <p>
-        In this project, we model an ecological system of species. We use real-world bird observation data
+        In this project, we model interactions of bird species in Toronto, 2025. We use real-world bird observation data
         from iNaturalist to analyze how close species are sighted from one another, and how likely they are to
         interact. Since the dataset includes precise geographic coordinates for each observation, it allows us to
-        model proximity-based interactions between species and examine how these relationships vary across
+        model proximity-based interactions (using the Jaccard Index) between species and examine how these relationships vary across
         seasons.
       </p>
       <p>
-        This project only focuses on the relationship between bird species in Toronto during the year 2025- a 
-        decision was made to ensure computational feasibility and to produce a more focused and interpretable model.
-      </p>
-      <p>
         The goal for this project is to better understand patterns of species co-occurrence and interaction within an ecosystem. Studying these relationships can provide insight into how ecosystems respond
-        to environmental changes, such as shifts in climate or population dynamics. So by modelling these interactions between
-        species, we hope to contribute to a deeper understanding of biodiversity interactions in ecosystems.
+        to environmental changes, specifically weather/season.
       </p>
-      <h2>Where it Started</h2>
+
+      <h2>Origin</h2>
       <p>
         This project was the result of our biggest CSC111 assignment. After spending the entire year learning various data structures and algorithms in Python, we finally had the opportunity to apply everything we learned to a real-world problem of our choice.
       </p>
@@ -85,7 +81,7 @@
     </div>
       <p>
         All of us had a shared interest in how graphs are used to analyze complex systems, eg. transportation networks, social networks, e.t.c. 
-        And after a little debate, we decided to go with modelling an ecological system.
+        And so after a little debate, we decided to go with modelling an ecological system.
       </p>
       
       <h2>Development</h2>
@@ -94,7 +90,7 @@
         This would help users detect seasonal patterns of species interactions, and hopefully uncover some interesting insights about the ecosystem.
       </p>
       <p>
-        So we choose iNaturalist, a platform that allow users to users upload sightings of any animal (excluding humans) they spot, along with other information such as observation dates, species names, geographic coordinates (latitude and longitude), and associated metadata.
+        So we choose iNaturalist, a platform that allow users to users upload sightings of any animal they spot (excluding humans &#129299;), along with other information such as observation dates, species names, geographic coordinates (latitude and longitude), and associated metadata.
         iNaturalist catalogues these observations and shares them with data repositories in a clean format, which made it a great source for our project.
       </p>
       <p>
@@ -108,16 +104,37 @@
           A custom ’Graph’ class (weighted, undirected), where each vertex represents a species and edges represent the likelihood of interaction between two species.
           The overall architecture of the program can be divided into four main stages:
           <ol>
-          <li> Data preprocessing: The raw CSV dataset is cleaned and filtered usingpandasto remove irrelevant attributes and group species together. </li>
+          <li> Data preprocessing: The raw CSV dataset is cleaned and filtered to remove irrelevant attributes. </li>
           <li> Data transformation: The cleaned data is converted into a collection of <b>Observation</b> objects,
           where each object holds all observations of a single species. Each observation organizes its data by
-          season, mapping seasonal categories to lists of timestamped geographic coordinates. </li>
+          season. </li>
           <li> Graph construction: Using these <b>Observation</b> objects, the program constructs four separate
-          graphs (one per season).For each season, species are added as vertices, and edges are created by comparing all pairs of species and determining whether they co-occur within a specified geographic
-          threshold using the Haversine Distance Formula and the Jaccard Index (justified by Tatsumi et al., 2025). Each edge stores both the raw number of co-occurrences and a computed interaction likelihood.
-          <li> Visualization and interaction:Instead of displaying the full graph (which would be too large and cluttered), our program extracts a portion of the graph centered on the species selected by the user. 
+          graphs (one per season). For each season, species are added as vertices, and edges are created by comparing all pairs of species, and determining whether they co-occur within a specified geographic
+          threshold. Each edge stores both the raw number of co-occurrences and a computed interaction likelihood.
+          <li> Visualization and interaction: ??? (we decided to leave this till the end)</li>
+        </ol>
+        </p>
+      </div>
+      <P>
+        So we started off with the first stage, data preprocessing. It didn't take too long, and didn't take up a lot of code either. 
+        A large task completed effeciently; we were on a roll.
+        Hah, I thought, either we're just geniuses &#128526;, or developers really make things seem harder than they are. 
+      </P>
+      <p>
+        Boy was I wrong. Right in the second stage, where we programmed an algorithm to clean the data and transform it to Observation objects, we realized our original plan was just a wee bit too ambitious.
+        Okay, maybe not a wee bit, but a lot. With almost 3 million lines of data to process, and on top of that comparing every single observation with every other observation to determine co-occurrence, it would take forever. Like literally.
+        So we decided to narrow our scope to just one year (2025) and one location (Toronto), which reduced the dataset to a more manageable size, and allowed it to run much faster too.
+      </p>
+      <p>
+        Then came the third stage. 
+        And if the narrowing wasn't enough, we had to -- 
+      </p>
+        <p>
+          So finally we realized, 
+          <div class="important-section">
+          4. Visualization and interaction: Instead of displaying the full graph (which would be too large and cluttered), our program extracts a portion of the graph centered on the species selected by the user. 
           This subgraph is filtered based on interaction probability and size constraints to ensure readability.
-          The resulting graph is then visualized with additional interactivity. </li>
+          The resulting graph is then visualized with additional interactivity. 
         </ol>
         </p>
       </div>
