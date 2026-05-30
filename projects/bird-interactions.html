@@ -98,33 +98,29 @@
         iNaturalist catalogues these observations and shares them with data repositories in a clean format, which made it a great source for our project.
       </p>
       <p>
-        So we downloaded the HUGE datasets, with more than 300,000 lines of data &#129327;. It had a lot of information, but how would we use it? 
+        So we downloaded the HUGE datasets, with about 299,705,908 lines of data &#129327;. It had a lot of information, but how would we use it? 
         How would we know what we needed, and really just <i>how would our program work</i>? Thus began our quest of mapping out our program, 
         and while I have no pictures of us in the study room on the 11th floor of Robarts, it was quite a sight. I know not
          how many papers we wasted that day, but eventually we decided it would work like this: 
       </p>
-      <p>
-        A custom ’Graph’ class (weighted, undirected), where each vertex represents a species and edges represent the likelihood of interaction between two species.
-        The overall architecture of the program can be divided into four main stages:
-        <ol>
-        <li> Data preprocessing:The raw CSV dataset is cleaned and filtered usingpandasto remove irrelevant attributes and group species together. </li>
-        <li> Data transformation:The cleaned data is converted into a collection of <b>Observation</b> objects,
-        where each object holds all observations of a single species.Each observation organizes its data by
-        season, mapping seasonal categories to lists of timestamped geographic coordinates. </li>
-        <li> Graph construction:Using theseObservationobjects, the program constructs four separate
-        graphs (one per season).For each season, species are added as vertices, and edges are created by comparing all pairs of species and determining whether they co-occur within a specified geographic
-        threshold using the Haversine Distance Formula and the Jaccard Index (justified by Tatsumi et al., 2025). Each edge stores both the raw number of co-occurrences and a computed interaction likelihood.
-        <li> Visualization and interaction:Instead of displaying the full graph (which would be too large and cluttered), our program extracts a portion of the graph centered on the species selected by the user. 
-        This subgraph is filtered based on interaction probability and size constraints to ensure readability.
-        The resulting graph is then visualized with additional interactivity. </li>
-      </ol>
-      </p>
-      <p>
-        So we cleaned the dataset with the pandas library, removing irrelevant columns and filtering out observations.
-        the processing time for such a large dataset took very long, so we restricted the dataset to birds in Toronto in the year 2025. Even after doing that, there were too many observations to make an interpretable model. 
-        Thus, we capped our observations at 6000 (randomly selected from the subset of bird observations).
-      </p>
-
+      <div class="important-section">
+        <p>
+          A custom ’Graph’ class (weighted, undirected), where each vertex represents a species and edges represent the likelihood of interaction between two species.
+          The overall architecture of the program can be divided into four main stages:
+          <ol>
+          <li> Data preprocessing: The raw CSV dataset is cleaned and filtered usingpandasto remove irrelevant attributes and group species together. </li>
+          <li> Data transformation: The cleaned data is converted into a collection of <b>Observation</b> objects,
+          where each object holds all observations of a single species. Each observation organizes its data by
+          season, mapping seasonal categories to lists of timestamped geographic coordinates. </li>
+          <li> Graph construction: Using these <b>Observation</b> objects, the program constructs four separate
+          graphs (one per season).For each season, species are added as vertices, and edges are created by comparing all pairs of species and determining whether they co-occur within a specified geographic
+          threshold using the Haversine Distance Formula and the Jaccard Index (justified by Tatsumi et al., 2025). Each edge stores both the raw number of co-occurrences and a computed interaction likelihood.
+          <li> Visualization and interaction:Instead of displaying the full graph (which would be too large and cluttered), our program extracts a portion of the graph centered on the species selected by the user. 
+          This subgraph is filtered based on interaction probability and size constraints to ensure readability.
+          The resulting graph is then visualized with additional interactivity. </li>
+        </ol>
+        </p>
+      </div>
       <h2>Lessons</h2>
   </section>
 

@@ -440,6 +440,19 @@ html {
     margin-top: 45px;
 }
 
+.important-section {
+    border-left: 3px solid var(--accent);
+    padding-left: 30px;
+    margin: 20px 0;
+    background: rgba(99, 51, 51, 0.02);
+    border-radius: 6px;
+}
+
+.important-section li::marker {
+    color: var(--accent);
+    font-weight: bold;
+}
+
 /* Full screen center container */
 .loader-wrapper {
     display: flex;
