@@ -33,6 +33,7 @@ html {
 }
 
 .navbar a {
+    
     color: var(--white);
     transition: 0.3s;
     float: left;
@@ -63,7 +64,7 @@ html {
 
 .socials {
     float: right;
-    margin-right: 45px;
+    margin-right: 80px;
 }
 
 .socials a {
@@ -451,6 +452,11 @@ html {
 .important-section li::marker {
     color: var(--accent);
     font-weight: bold;
+}
+
+.important-text {
+    color: var(--accent);
+    text-shadow: 2px 2px 4px;
 }
 
 /* Full screen center container */

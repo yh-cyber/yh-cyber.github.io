@@ -53,91 +53,104 @@
 
       <h2> Overview </h2>
       <p>
-        In this project, we model interactions of bird species in Toronto, 2025. We use real-world bird observation data
-        from iNaturalist to analyze how close species are sighted from one another, and how likely they are to
-        interact. Since the dataset includes precise geographic coordinates for each observation, it allows us to
-        model proximity-based interactions (using the Jaccard Index) between species and examine how these relationships vary across
+        In this project, we model interactions of bird species in Toronto, 2025 and <b>predict</b> how likely they are to
+        interact based on this data using real-world bird observation data from iNaturalist. Since the dataset includes precise geographic coordinates for each observation, it allows us to
+        model proximity-based interactions between species and examine how these relationships vary across
         seasons &#129414;.
-      </p>
-      <p>
+        <br><br>
         The goal for this project is to better understand patterns of species co-occurrence and interaction within an ecosystem. Studying these relationships can provide insight into how ecosystems respond
         to environmental changes, specifically weather/season &#128062;.
       </p>
 
+
       <h2>Origin</h2>
       <p>
         This project was the result of our biggest CSC111 assignment. After spending the entire year learning various data structures and algorithms in Python, we finally had the opportunity to apply everything we learned to a real-world problem of our choice &#128240;.
-      </p>
-      <p>
+        <br><br>
         For the first time, we were completely on our own; no starter code, no step-by-step instructions. Just guidelines: identify a meaningful problem, find a dataset, and develop a solution using concepts we learned throughout the year.
         However, there was one constraint: we <i>had</i> to use trees and/or graphs to represent some core part of our project &#128195;.
-      </p>
-      <p>
+        <br><br>
         Now trees are used to represent hierarchical, branching, or recursively nested data like categorizations of animals, or the moves in a single-player or multi-player game. Graphs, on the other hand, represent networks of data, like users and relationships on a social media platform or geographic and spatial networks.
       </p>
+
       <div class="project-image">
         <img src="../assets/tree_vs_graph.jpg" alt="tree and graph comparison image">
         <span class="image-subtitle"> <i>Courtesy of GeeksforGeeks</i> </span>
-    </div>
+      </div>
+
       <p>
         All of us had a shared interest in how graphs are used to analyze complex systems, eg. transportation networks, social networks, e.t.c. 
         And so after a little debate, we decided to go with modelling an ecological system &#127966;.
       </p>
       
+
       <h2>Development</h2>
       <p>
         Originally, we planned on modeling the seasonal interactions for all animals across multiple years and locations, where users could choose location, species, and speason. 
         This would help users detect seasonal patterns of species interactions, and hopefully uncover some interesting insights about the ecosystem.
-      </p>
-      <p>
+        <br><br>
         So we choose iNaturalist, a platform that allow users to users upload sightings of any animal they spot (excluding humans &#129299;), along with other information such as observation dates, species names, geographic coordinates (latitude and longitude), and associated metadata.
         iNaturalist catalogues these observations and shares them with data repositories in a clean format, which made it a great source for our project.
-      </p>
-      <p>
+        <br><br>
         So we downloaded the HUGE datasets, with about 299,705,908 lines of data &#129327;. It had a lot of information, but how would we use it? 
         How would we know what we needed, and really just <i>how would our program work</i>? Thus began our quest of mapping out our program, 
         and while I have no pictures of us in the study room on the 11th floor of Robarts, it was quite a sight. I know not
          how many papers we wasted that day, but eventually we decided it would work like this: &#128220; 
       </p>
+
       <div class="important-section">
         <p>
           A custom ’Graph’ class (weighted, undirected), where each vertex represents a species and edges represent the likelihood of interaction between two species.
           The overall architecture of the program can be divided into four main stages:
           <ol>
-          <li> Data preprocessing: The raw CSV dataset is cleaned and filtered to remove irrelevant attributes. </li>
-          <li> Data transformation: The cleaned data is converted into a collection of <b>Observation</b> objects,
+          <li> <span class="important-text">Data preprocessing:</span> The raw CSV dataset is cleaned and filtered to remove irrelevant attributes. </li>
+          <li> <span class="important-text">Data transformation:</span> The cleaned data is converted into a collection of <b>Observation</b> objects,
           where each object holds all observations of a single species. Each observation organizes its data by
           season. i.e, all observations fall in either SUMMER, WINTER, SPRING, or AUTUMN</li>
-          <li> Graph construction: Using these <b>Observation</b> objects, the program constructs four separate
+          <li> <span class="important-text">Graph construction:</span> Using these <b>Observation</b> objects, the program constructs four separate
           graphs (one per season): Species are added as vertices, and edges are created by comparing all pairs of species, and determining whether they co-occur within a specified geographic
-          threshold. Each edge stores both the raw number of co-occurrences and a computed interaction likelihood.
-          <li> Visualization and interaction: ??? (we decided to leave this till the end)</li>
+          threshold. 
+          <li> <span class="important-text">Visualization and interaction:</span> ??? (we decided to leave this till the end)</li>
         </ol>
         </p>
       </div>
+
       <P>
         So we started off with the first stage, data preprocessing. It didn't take too long, and didn't take up a lot of code either. 
         A large task completed effeciently; we were on a roll.
         Hah, I thought, either we're just geniuses &#128526;, or developers really make things seem harder than they are. 
-      </P>
-      <p>
+        <br><br>
         Boy was I wrong. Right in the second stage, where we programmed an algorithm to clean the data and transform it to Observation objects, we realized our original plan was just a wee bit too ambitious.
-        Okay, maybe not a wee bit, but a lot. With almost 3 million lines of data to process, and on top of that comparing every single observation with every other observation to determine co-occurrence, it would take forever. Like literally.
+        Okay, maybe not a wee bit, but a lot. With almost 3 million lines of data to process, it would take forever. Like literally.
         So we decided to narrow our scope to just one year (2025) and one location (Toronto), which reduced the dataset to a more manageable size, and allowed it to run much faster too.
+        <br><br>
+        Then came the third stage. This was the second-longest stage, as we had to figure out ways to determine interaction likelihood, as well as implement the graph structure. 
+        So we started off basic: Seperate data into 4 seperate graphs, one vertex for each species, and edges between for interaction. We could calculate interaction likelihood later.
+        <br><br>
+        Well, easier said than done of course. How would we determine interaction? 
+        So we found two statistical methods to back our work: The <i>Haversine formula</i>, and the <i>Jaccard Index</i>. So in <b>each</b> seasonal graph: 
+        <div class="important-section">
+          <ul>
+            <li>Each observation would be compared to every other one.</li>
+            <li> And for each pair, the geographic distance in between would be caclulated using the Haversine distance formula, which accounts for the Earth’s curvature. </li>
+            <li> If two observations fall within a proximity threshold of 1.0 kilometre, this would be treated as a potential interaction, and therefore recorded in the graph by adding an edge between the corresponding species. </li>
+            <li> Since two species may interact more than once (i.e. there may be more than one edge between species), edges in the graph are weighted: each time two species meet the proximity threshold, the weight of the edge between them is incremented. </li>
+            <li>Thus the weight represents the frequency of co-occurrence, and is the proxy for the likelihood of interaction between species.</li>
+          </ul>        
+        </div>
+        Now for interaction likelihood. This took a while, but 
+        <br>
+        So finally we realized, 
+        <div class="important-section">
+          <ol start="4">
+            <li> <span class="important-text">Visualization and interaction: </span> Instead of displaying the full graph (which would be too large and cluttered), our program extracts a portion of the graph centered on the species selected by the user. 
+              This subgraph is filtered based on interaction probability and size constraints to ensure readability.
+              The resulting graph is then visualized with additional interactivity. 
+          </ol>
+        </div>
       </p>
-      <p>
-        Then came the third stage. 
-        And if the narrowing wasn't enough, we had to -- 
-      </p>
-        <p>
-          So finally we realized, 
-          <div class="important-section">
-          4. Visualization and interaction: Instead of displaying the full graph (which would be too large and cluttered), our program extracts a portion of the graph centered on the species selected by the user. 
-          This subgraph is filtered based on interaction probability and size constraints to ensure readability.
-          The resulting graph is then visualized with additional interactivity. 
-        </ol>
-        </p>
-      </div>
+
+
       <h2>Lessons</h2>
   </section>
 
