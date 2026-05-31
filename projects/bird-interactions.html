@@ -125,21 +125,20 @@
         So we decided to narrow our scope to just one year (2025) and one location (Toronto), which reduced the dataset to a more manageable size, and allowed it to run much faster too.
         <br><br>
         Then came the third stage. This was the second-longest stage, as we had to figure out ways to determine interaction likelihood, as well as implement the graph structure. 
-        So we started off basic: Seperate data into 4 seperate graphs, one vertex for each species, and edges between for interaction. We could calculate interaction likelihood later.
+        So we started off basic: Seperate data into 4 seperate graphs, one vertex for each species, and edges between for interaction.
         <br><br>
         Well, easier said than done of course. How would we determine interaction? 
         So we found two statistical methods to back our work: The <i>Haversine formula</i>, and the <i>Jaccard Index</i>. So in <b>each</b> seasonal graph: 
         <div class="important-section">
           <ul>
             <li>Each observation would be compared to every other one.</li>
-            <li> And for each pair, the geographic distance in between would be caclulated using the Haversine distance formula, which accounts for the Earth’s curvature. </li>
+            <li> And for each pair, the geographic distance in between would be caclulated using the <i>Haversine distance formula.</i> </li>
             <li> If two observations fall within a proximity threshold of 1.0 kilometre, this would be treated as a potential interaction, and therefore recorded in the graph by adding an edge between the corresponding species. </li>
             <li> Since two species may interact more than once (i.e. there may be more than one edge between species), edges in the graph are weighted: each time two species meet the proximity threshold, the weight of the edge between them is incremented. </li>
-            <li>Thus the weight represents the frequency of co-occurrence, and is the proxy for the likelihood of interaction between species.</li>
+            <li> Based on the raw number of co-occurrences, ---------- </li>
           </ul>        
         </div>
-        Now for interaction likelihood. This took a while, but 
-        <br>
+        Now came the---- 
         So finally we realized, 
         <div class="important-section">
           <ol start="4">
@@ -152,6 +151,7 @@
 
 
       <h2>Lessons</h2>
+      It's easier to start wiht classes and then build on. 
   </section>
 
   <footer>
