@@ -86,6 +86,8 @@
 
       <h2>Development</h2>
       <p>
+        <span class="important-text">**Story Time**</span>; if you'd like to skip to the technical details, feel free to scroll down to <span class="social-link"><a href="#technical">here</a></span>.
+        <br><br>
         Originally, we planned on modeling the seasonal interactions for all animals across multiple years and locations, where users could choose location, species, and speason. 
         This would help users detect seasonal patterns of species interactions, and hopefully uncover some interesting insights about the ecosystem.
         <br><br>
@@ -149,32 +151,71 @@
         Now came the final stage: visualizing the graph. This took the longest time, not only due to the complexity of visualization, but also because this was also the first time 
         we were able to <i>see</i> the results of our graph construction &#128064;. Until this point, things had been highly theoretical, and we had no way of knowing whether our program was working or not.
         <br><br>
-        So we set up a basic structure using NetworkX - rendered with Matplotlib - and when we <i>finally</i> saw our graph, it was a mess &#128565;. 
-        With so many species and interactions, the graph was too large and cluttered to be useful. So we had to get creative. We decided to extract a portion of the graph centered on the species selected by the user.
-        This way, users could still explore the interactions of their chosen species without being overwhelmed by the full graph.
+        So we set up a basic structure using NetworkX - rendered with Matplotlib - and when we <i>finally</i> saw our graph, it was a mess. 
+        With so many species and interactions, the graph was too large and cluttered to be useful. So we had to get creative. We decided to extract a portion of the graph centered on the species selected by the user (max 50 nodes), and filter out 
+        interactions with less that 2% probability of interaction. This way, users could still explore the interactions of their chosen species without being overwhelmed by the full graph.
       </p>
 
       <div class="project-image">
       <img src="../assets/early_work.jpg" alt="graph visualization ">
       <span class="image-subtitle"> <i>Early stages of graph visualization</i> </span>
       </div>
+      <br>
 
       <p>
-        Then we faced other problems, like ------
+        Then we faced other problems, like missing data for certain species, zero errors in calculation, weighted edge not showing, e.t.c. It took a lot of debugging and tweaking, but eventually we got it to work.
+        There were times our entire program would stop working only for one wrong line of code &#128565;.
+        <br><br>
+        The last thing added was interactivity. We added a hover over feature (see first image) to lessen the clutter and make the graph easier to read. 
+        We also made a dropdown menu for users to choose species, with a searchable feature. Baisically:
         <div class="important-section">
           <ol start="4">
             <li> <span class="important-text">Visualization and interaction: </span> The user is first prompted to select a species of interest, and a season. 
               Instead of displaying the full graph (which would be too large and cluttered), 
-              our program extracts a portion of the graph centered on the species selected by the user. 
-              This subgraph is filtered based on interaction probability and size constraints to ensure readability.
-              The resulting graph is then visualized with additional interactivity. 
+              our program extracts a portion of the graph centered on the species selected by the user.
+              The resulting graph is then visualized with additional interactivity, like weighted edges and hover-over function. 
           </ol>
         </div>
       </p>
 
+      <div class="project-image">
+      <img src="../assets/dropdown menu.jpg" alt="user interface">
+      <span class="image-subtitle"> <i>Popup menu</i> </span>
+      </div>
+
+      <p>
+        Oookay, to sum it up, these were the main computations we implemented (feel free to skip if you don't want technical details):
+        <div class="important-section" id="technical">
+          <ul>
+            <li> Cleaning and filtering the raw CSV dataset by removing irrelevant columns using pandas. </li>
+            <li> Transforming new, filtered raw CSV data into structured ’Observation’ objects so they can be computed on more efficiently. </li>
+            <li> Creating vertices for the graph by grouping observations based on species and adding in neighbours accordingly. </li>
+            <li> Computing pairwise geographic distances between Observations using the haversine formula to get proximity. </li>
+            <li> Constructing weighted edges between pairs of species, and adding in Vertex neighbours, based on this proximity. </li>
+            <li> Converting the custom graph structure into a format suitable for visualization using networkx and matplotlib. </li>
+            <li> Collecting user input (species, season, and proximity threshold) through a custom tkinter interface with input fields, validation, and a searchable dropdown for species selection with real-time filtering. </li>
+            <li> Selecting the appropriate seasonal graph based on user input, AND error handling if there is no observation of that species in that season. </li>
+            <li> Extracting a subgraph centered on the chosen species by limiting total nodes to 50, and the maximum number of each species’ neighbour to 4 (i.e. by selecting top interactions). </li>
+            <li> Scaling edge thickness using a logarithmic function to better represent differences in interaction strength. </li>
+            <li> Displaying nodes as circular images of species using Pillow and numpy. </li>
+            <li> Dynamically loading images from URLs usingurllib, with fallback handling for missing or invalid images. </li>
+            <li> Positioning nodes using networkx.spring_layout to produce a visually balanced graph structure. </li>
+            <li> Adding interactive hover functionality using mplcursors, allowing users to view all neighbouring species and interaction probabilities for that specific species. </li>
+          </ul>   
+        </div>
+      </p>
 
       <h2>Lessons</h2>
       It's easier to start wiht classes and then build on. 
+      One of the most memorable moments for me was when once our program stopped working completely, and we spent more than an hour debugging only to find that it was one single line of code 
+      Runtime of the fuction was too long. We addessed that by cutting observations and removing
+dead code
+We had to add numerous test cases when working with jaccard index as that aded problems like zero probalbilites for some species. 
+mplementing interactivity within a purely Python-based environment (without JavaScript). We
+eventually added all features by researching and integrating different python libraries, which
+required careful coordination between our custom graph and the library usage rules.
+
+
   </section>
 
   <footer>
