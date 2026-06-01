@@ -160,7 +160,6 @@
       <img src="../assets/early_work.jpg" alt="graph visualization ">
       <span class="image-subtitle"> <i>Early stages of graph visualization</i> </span>
       </div>
-      <br>
 
       <p>
         Then we faced other problems, like missing data for certain species, zero errors in calculation, weighted edge not showing, e.t.c. It took a lot of debugging and tweaking, but eventually we got it to work.
@@ -206,15 +205,21 @@
       </p>
 
       <h2>Lessons</h2>
-      It's easier to start wiht classes and then build on. 
-      One of the most memorable moments for me was when once our program stopped working completely, and we spent more than an hour debugging only to find that it was one single line of code 
-      Runtime of the fuction was too long. We addessed that by cutting observations and removing
-dead code
-We had to add numerous test cases when working with jaccard index as that aded problems like zero probalbilites for some species. 
-mplementing interactivity within a purely Python-based environment (without JavaScript). We
-eventually added all features by researching and integrating different python libraries, which
-required careful coordination between our custom graph and the library usage rules.
-
+      <p>
+        All in all, this project taught me a lot more than just how to implement graphs in Python. It was my first time working on a large software project from scratch, where my team was responsible for every design, algorithm, and data structure.
+        <br><br>
+        One of my biggest takeaways was the importance of designing data structures before writing large amounts of code. Early on, we spent s good chunk of time planning our custom Observation, Vertex, and Graph classes. Although this felt slow at first, having a clear structure made the later stages of development much easier.
+        <br><br>
+        I also gained a much deeper appreciation for debugging (as much as I hate to admit it &#129394;). At several points, our entire program stopped working because of a single line of code, like an incorrect condition, or an overlooked edge case. One particularly memorable debugging session - in which our progmram stopped working entirely - drove us nuts, only for us to find the issue was caused by a small mistake in a single statement: we had used a colon instead of a dash. Experiences like this taught me the importance of testing incrementally, and never assuming that a complicated problem necessarily has a complicated cause.
+        <br><br>
+        Another major lesson was performance optimization. Our original dataset contained millions of observations, and some of our early implementations were far too slow to run efficiently. We had to rethink our approach, remove redundant computations, eliminate unnecessary loops, reduce dataset size, and carefully choose which parts of the graph to visualize. This was my first exposure to the reality that an algorithm that works correctly in theory is not always an algorithm that works practically. (Note: I am aware that perhaps with a more efficient algorithm, it would have been possible to include all observations, but I’m just not technically skilled enough to implement something like that yet &#128579;).
+        <br><br>
+        From a mathematical perspective, implementing our interaction-likelihood model was surprisingly challenging. We experimented with different approaches before settling on a Jaccard-index-based calculation. Along the way, we encountered issues such as zero-probability interactions, invalid logarithmic calculations, e.t.c. To ensure correctness, we had to write a lot of test cases; this taught me the importance of verifying mathematical assumptions rather than simply trusting that a formula will work in practice.
+        <br><br>
+        Finally, I learned how much effort goes into creating a polished user experience. Building the graph itself was only part of the challenge. We also had to think about how users would interact with the data, how to reduce visual clutter, how to handle missing images and invalid inputs, and how to add interactive features for accessibility. Implementing these features entirely within a Python environment required learning several new libraries as well.
+        <br><br>
+        Looking back, I think the most valuable takeaway from this project was learning how to take an idea from a rough concept to a fully functioning application. Shoutout to my amazing team; this project would not have been possible without them &#128591;. 
+      </p>
 
   </section>
 
