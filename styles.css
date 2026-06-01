@@ -434,6 +434,19 @@ html {
     margin-top: 10px;
 }
 
+.table-contents {
+    justify-content: center;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    align-content: center; /**Use this to align instead of align-items **/
+}
+
+.table-contents a{
+    color: var(--accent);
+    text-decoration: none;
+}
+
 .project-display h2{
     font-family: "Turret Road", sans-serif;
     font-size: 23px;
