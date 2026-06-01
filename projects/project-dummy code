@@ -50,17 +50,43 @@
             <img src="../assets/DUMMY.png" alt="----">
             <span class="image-subtitle"> <i>Image Subtitle</i> </span>
         </div>
+        <br><br>
+
+        <hr width="50%">
+        <div class="table-contents">
+          <a href="#overview">Overview</a> | <a href="#origin">Origin</a> | <a href="#development">Development</a> | <a href="#lessons">Lessons</a>
+        </div>
+        <hr width="50%"> <br>
+
 
         <!--Blog-->
+        <section id="overview">
         <h2>SUBSECTION TITLE</h2>
         <p>
             INFOINFOINFO
         </p>
+        </section>
 
+        <section id="origin">
         <h2>SUBSECTION TITLE</h2>
         <p>
             INFOINFOINFO
         </p>
+        </section>
+
+        <section id="development">
+        <h2>SUBSECTION TITLE</h2>
+        <p>
+            INFOINFOINFO
+        </p>
+        </section>
+
+        <section id="lessons">
+        <h2>SUBSECTION TITLE</h2>
+        <p>
+            INFOINFOINFO
+        </p>
+        </section>
 
     </section>
 
