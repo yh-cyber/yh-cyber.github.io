@@ -101,6 +101,8 @@ html {
     font-size: 75px;
     margin: 0;
     line-height: 1;
+    margin-top: 30px;
+    margin-bottom: 30px;
 }
 
 .hero-text {
