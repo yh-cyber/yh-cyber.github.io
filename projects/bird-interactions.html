@@ -121,10 +121,10 @@
         Hah, I thought, either we're just geniuses &#128526;, or developers really make things seem harder than they are. 
         <br><br>
         Boy was I wrong. Right in the second stage, where we programmed an algorithm to clean the data and transform it to Observation objects, we realized our original plan was just a wee bit too ambitious.
-        Okay, maybe not a wee bit, but a lot. With almost 3 million lines of data to process, it would take forever. Like literally.
+        Okay, maybe not a wee bit &#128579;, but a lot. With almost 3 million lines of data to process, it would take forever. Like literally.
         So we decided to narrow our scope to just one year (2025) and one location (Toronto), which reduced the dataset to a more manageable size, and allowed it to run much faster too.
         <br><br>
-        Then came the third stage. This was the second-longest stage, as we had to figure out ways to determine interaction likelihood, as well as implement the graph structure. 
+        Then came the third stage. This was the second-longest stage, as we had to figure out ways to determine interaction likelihood, as well as implement the graph structure &#128555;. 
         So we started off basic: Seperate data into 4 seperate graphs, one vertex for each species, and edges between for interaction.
         <br><br>
         Well, easier said than done of course. How would we determine interaction? 
@@ -135,14 +135,37 @@
             <li> And for each pair, the geographic distance in between would be caclulated using the <i>Haversine distance formula.</i> </li>
             <li> If two observations fall within a proximity threshold of 1.0 kilometre, this would be treated as a potential interaction, and therefore recorded in the graph by adding an edge between the corresponding species. </li>
             <li> Since two species may interact more than once (i.e. there may be more than one edge between species), edges in the graph are weighted: each time two species meet the proximity threshold, the weight of the edge between them is incremented. </li>
-            <li> Based on the raw number of co-occurrences, ---------- </li>
-          </ul>        
+            <li> Using the raw number of co-occurrences, the interaction probability is calculated using the <i>Jaccard Index</i>. </li>
+          </ul>   
         </div>
-        Now came the---- 
-        So finally we realized, 
+        </p>
+
+      <div class="project-image">
+      <img src="../assets/Jaccard.png" alt="jaccard index note">
+      <span class="image-subtitle"> <i>Ruoshui's Work :)</i> </span>
+      </div>
+
+      <p>
+        Now came the final stage: visualizing the graph. This took the longest time, not only due to the complexity of visualization, but also because this was also the first time 
+        we were able to <i>see</i> the results of our graph construction &#128064;. Until this point, things had been highly theoretical, and we had no way of knowing whether our program was working or not.
+        <br><br>
+        So we set up a basic structure using NetworkX - rendered with Matplotlib - and when we <i>finally</i> saw our graph, it was a mess &#128565;. 
+        With so many species and interactions, the graph was too large and cluttered to be useful. So we had to get creative. We decided to extract a portion of the graph centered on the species selected by the user.
+        This way, users could still explore the interactions of their chosen species without being overwhelmed by the full graph.
+      </p>
+
+      <div class="project-image">
+      <img src="../assets/early_work.jpg" alt="graph visualization ">
+      <span class="image-subtitle"> <i>Early stages of graph visualization</i> </span>
+      </div>
+
+      <p>
+        Then we faced other problems, like ------
         <div class="important-section">
           <ol start="4">
-            <li> <span class="important-text">Visualization and interaction: </span> Instead of displaying the full graph (which would be too large and cluttered), our program extracts a portion of the graph centered on the species selected by the user. 
+            <li> <span class="important-text">Visualization and interaction: </span> The user is first prompted to select a species of interest, and a season. 
+              Instead of displaying the full graph (which would be too large and cluttered), 
+              our program extracts a portion of the graph centered on the species selected by the user. 
               This subgraph is filtered based on interaction probability and size constraints to ensure readability.
               The resulting graph is then visualized with additional interactivity. 
           </ol>
