@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Personal Website">
+  <meta name="author" content="Yusyra Hossain">
+  <title>Yusyra Hossain</title>
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&family=Turret+Road:wght@200;300;400;500;700;800" rel="stylesheet">
+</head>
+
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo"><a href="/"><img src="../assets/logo.png" alt="Logo"></a></div>
+        <a href="../">Home</a>
+        <a href="../#cs_projects">CS Projects</a>
+        <a href="../#passion_projects">Passion Projects</a>
+      <div class="socials">
+        <a href="https://github.com/yh-cyber"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/yusyrahossain/"><i class="fab fa-linkedin"></i></a>
+        <a href="mailto:yusyra.hossain@mail.utoronto.ca"><i class="fas fa-envelope"></i></a>
+      </div>
+    </nav>
+    </header>
+
+    <section class = "project-display">
+
+        <!-- Back Button -->
+        <a href="../#cs_projects" class="home-button">
+            <b> < Back to Projects </b>
+        </a>
+        
+        <!-- Project Title -->
+        <h1 id="title"><b>TITLETITLETITLE</b></h1>
+        <h3><i>Authors</i></h3>
+        <h3>*****</h3>
+        <h3><i>Date</i></h3>
+
+        <div class="gitlink">
+            <a href="https://github.com/yh-cyber"><i class="fab fa-github"></i></a>
+        </div>
+        
+        <div class="project-image">
+            <img src="../assets/DUMMY.png" alt="----">
+            <span class="image-subtitle"> <i>Image Subtitle</i> </span>
+        </div>
+        <br><br>
+
+        <hr width="50%">
+        <div class="table-contents">
+          <a href="#overview">Overview</a> | <a href="#origin">Origin</a> | <a href="#development">Development</a> | <a href="#lessons">Lessons</a>
+        </div>
+        <hr width="50%"> <br>
+
+
+        <!--Blog-->
+        <section id="overview">
+        <h2>Overview</h2>
+        <p>
+            INFOINFOINFO
+        </p>
+        </section>
+
+        <section id="origin">
+        <h2>Origin</h2>
+        <p>
+            This was the final project for ICS3U (in case you're wondering, I wasn't able to take ICS4U as the course got cancelled due to low enrollment).
+            I took this course over the summer, so it was kinda rushed and everything we learnt was in Java. 
+            Over the course of this project, I'd written longer programs like a text based adventure game, but
+            the reason I've decided to showcase this one is because it required the most code logic and I really loved working on the histogram at the end :). 
+            
+        </p>
+        </section>
+
+        <section id="development">
+        <h2>Development</h2>
+        <p>
+            INFOINFOINFO
+        </p>
+        </section>
+
+        <section id="lessons">
+        <h2>Lessons</h2>
+        <p>
+            INFOINFOINFO
+        </p>
+        </section>
+
+    </section>
+
+
+    <footer>
+    <div class="footer">
+    <p> Built by Yusyra Hossain. All rights reserved. &copy; </p>
+    </div>
+    </footer>
+
+</body>
+</html>
