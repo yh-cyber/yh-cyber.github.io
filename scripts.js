@@ -43,28 +43,52 @@ typeEffect();
 
 
 // Carousel Functionality
-const carousel = document.getElementById("projectCarousel");
-const nextBtn = document.getElementById("nextBtn");
-const prevBtn = document.getElementById("prevBtn");
+function setupCarousel(carouselId, nextId, prevId) {
 
-let scrollAmount = 0;
+    const carousel = document.getElementById(carouselId);
+    const nextBtn = document.getElementById(nextId);
+    const prevBtn = document.getElementById(prevId);
 
-nextBtn.addEventListener("click", () => {
-    const maxScroll =
-        carousel.scrollWidth -
-        carousel.parentElement.clientWidth;
-    scrollAmount += 150;
-    if (scrollAmount > maxScroll) {
-        scrollAmount = maxScroll;
-    }
-    carousel.style.transform =
-        `translateX(-${scrollAmount}px)`;
-});
+    let scrollAmount = 0;
 
-prevBtn.addEventListener("click", () => {
-    scrollAmount -= 150;
-    if (scrollAmount < 0) {
-        scrollAmount = 0;
-    }
-    carousel.style.transform = `translateX(-${scrollAmount}px)`;
-});
+    nextBtn.addEventListener("click", () => {
+
+        const maxScroll =
+            carousel.scrollWidth -
+            carousel.parentElement.clientWidth;
+
+        scrollAmount += 150;
+
+        if (scrollAmount > maxScroll) {
+            scrollAmount = maxScroll;
+        }
+
+        carousel.style.transform =
+            `translateX(-${scrollAmount}px)`;
+    });
+
+    prevBtn.addEventListener("click", () => {
+
+        scrollAmount -= 150;
+
+        if (scrollAmount < 0) {
+            scrollAmount = 0;
+        }
+
+        carousel.style.transform =
+            `translateX(-${scrollAmount}px)`;
+    });
+}
+
+
+setupCarousel(
+    "csprojectCarousel",
+    "nextBtn1",
+    "prevBtn1"
+);
+
+setupCarousel(
+    "passionprojectCarousel",
+    "nextBtn2",
+    "prevBtn2"
+);
