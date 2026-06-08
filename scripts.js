@@ -80,7 +80,6 @@ function setupCarousel(carouselId, nextId, prevId) {
     });
 }
 
-
 setupCarousel(
     "csprojectCarousel",
     "nextBtn1",
@@ -92,3 +91,44 @@ setupCarousel(
     "nextBtn2",
     "prevBtn2"
 );
+
+
+// Essay Pages
+const pages =
+    document.querySelectorAll(".paper-page");
+const nextPage =
+    document.getElementById("nextPage");
+const prevPage =
+    document.getElementById("prevPage");
+const pageIndicator =
+    document.getElementById("pageIndicator");
+let currentPage = 0;
+
+function showPage(index) {
+    pages.forEach(page => {
+        page.classList.remove("active");
+    });
+    pages[index].classList.add("active");
+    pageIndicator.textContent =
+        `${index + 1} / ${pages.length}`;
+}
+
+nextPage.addEventListener("click", () => {
+
+    if (currentPage < pages.length - 1) {
+        currentPage++;
+        showPage(currentPage);
+    }
+});
+
+prevPage.addEventListener("click", () => {
+
+    if (currentPage > 0) {
+
+        currentPage--;
+
+        showPage(currentPage);
+    }
+});
+
+showPage(0);
