@@ -13,15 +13,14 @@ let isDeleting = false;
 const typingText = document.getElementById("typing-text");
 
 function typeEffect() {
+    if (!typingText) return;
 
     const currentWord = words[wordIndex];
 
     if (isDeleting) {
-        typingText.textContent =
-            currentWord.substring(0, charIndex--);
+        typingText.textContent = currentWord.substring(0, charIndex--);
     } else {
-        typingText.textContent =
-            currentWord.substring(0, charIndex++);
+        typingText.textContent = currentWord.substring(0, charIndex++);
     }
 
     let speed = isDeleting ? 50 : 100;
@@ -29,9 +28,7 @@ function typeEffect() {
     if (!isDeleting && charIndex === currentWord.length + 1) {
         speed = 1500;
         isDeleting = true;
-    }
-
-    else if (isDeleting && charIndex === 0) {
+    } else if (isDeleting && charIndex === 0) {
         isDeleting = false;
         wordIndex = (wordIndex + 1) % words.length;
     }
@@ -39,7 +36,9 @@ function typeEffect() {
     setTimeout(typeEffect, speed);
 }
 
-typeEffect();
+if (typingText) {
+    typeEffect();
+}
 
 
 // Carousel Functionality
@@ -48,6 +47,10 @@ function setupCarousel(carouselId, nextId, prevId) {
     const carousel = document.getElementById(carouselId);
     const nextBtn = document.getElementById(nextId);
     const prevBtn = document.getElementById(prevId);
+
+    if (!carousel || !nextBtn || !prevBtn) {
+        return;
+    }
 
     let scrollAmount = 0;
 
@@ -94,41 +97,35 @@ setupCarousel(
 
 
 // Essay Pages
-const pages =
-    document.querySelectorAll(".paper-page");
-const nextPage =
-    document.getElementById("nextPage");
-const prevPage =
-    document.getElementById("prevPage");
-const pageIndicator =
-    document.getElementById("pageIndicator");
-let currentPage = 0;
+const pages = document.querySelectorAll(".paper-page");
+const nextPage = document.getElementById("nextPage");
+const prevPage = document.getElementById("prevPage");
+const pageIndicator = document.getElementById("pageIndicator");
 
-function showPage(index) {
-    pages.forEach(page => {
-        page.classList.remove("active");
+if (pages.length > 0 && nextPage && prevPage && pageIndicator) {
+    let currentPage = 0;
+
+    function showPage(index) {
+        pages.forEach(page => {
+            page.classList.remove("active");
+        });
+        pages[index].classList.add("active");
+        pageIndicator.textContent = `${index + 1} / ${pages.length}`;
+    }
+
+    nextPage.addEventListener("click", () => {
+        if (currentPage < pages.length - 1) {
+            currentPage++;
+            showPage(currentPage);
+        }
     });
-    pages[index].classList.add("active");
-    pageIndicator.textContent =
-        `${index + 1} / ${pages.length}`;
+
+    prevPage.addEventListener("click", () => {
+        if (currentPage > 0) {
+            currentPage--;
+            showPage(currentPage);
+        }
+    });
+
+    showPage(0);
 }
-
-nextPage.addEventListener("click", () => {
-
-    if (currentPage < pages.length - 1) {
-        currentPage++;
-        showPage(currentPage);
-    }
-});
-
-prevPage.addEventListener("click", () => {
-
-    if (currentPage > 0) {
-
-        currentPage--;
-
-        showPage(currentPage);
-    }
-});
-
-showPage(0);
