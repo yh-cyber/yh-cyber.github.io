@@ -279,7 +279,7 @@ html {
 
 .timeline-item:hover .timeline-tooltip {
     opacity: 1;
-    transform: translateY(-5px);
+    transform: translateY(-15px);
 }
 
 /* CS Projects Section */
