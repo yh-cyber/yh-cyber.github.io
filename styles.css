@@ -668,6 +668,15 @@ html {
     font-size: 18px;
 }
 
+.essay-section h3{
+    color: var(--accent);
+    font-size: 20px;
+    text-decoration: underline var(--white) wavy 2px;
+}
+
+.essay-section h4{
+    text-decoration: underline var(--white) 3px;
+}
 
 /* Footer */
 .footer {
