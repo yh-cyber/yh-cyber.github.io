@@ -474,6 +474,29 @@ html {
     text-shadow: 2px 2px 4px;
 }
 
+
+/* Quote */
+.closing-quote {
+    margin-top: 100px;
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.quote {
+    font-size: 28px;
+    font-style: italic;
+    color: var(--white);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.quote-author {
+    margin-top: 20px;
+    color: var(--accent);
+    font-size: 18px;
+}
+
+
 /* Full screen center container */
 .loader-wrapper {
     display: flex;
@@ -481,6 +504,7 @@ html {
     align-items: center;
     height: 10vh;
   }
+
 
 /* Loader */
 .loader {
