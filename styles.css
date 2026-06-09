@@ -33,7 +33,6 @@ html {
 }
 
 .navbar a {
-    
     color: var(--white);
     transition: 0.3s;
     float: left;
@@ -486,7 +485,7 @@ html {
     font-size: 28px;
     font-style: italic;
     color: var(--white);
-    max-width: 800px;
+    max-width: 80%;
     margin: 0 auto;
 }
 
