@@ -222,6 +222,9 @@ html {
     margin-top: 60px;
 }
 
+.timeline h3 {
+    color: var(--accent);
+}
 .timeline::before { /* LINE */
     content: "";
     position: absolute;
@@ -271,16 +274,37 @@ html {
     background: var(--navback);
     border: 1px solid var(--accent);
     border-radius: 12px;
-    padding: 12px;
-    width: 180px;
-    text-align: center;
+    padding: 10px 10px;
+    width: 200px;
+    text-align: left;
     transition: 0.3s;
+}
+
+.timeline-tooltip h3 {
+    text-align: center; /* Only the heading is centered */
+    margin-top: 0;
 }
 
 .timeline-item:hover .timeline-tooltip {
     opacity: 1;
-    transform: translateY(-15px);
+    transform: translateY(-20px);
 }
+
+/* Left-most item */
+.timeline-item:first-child .timeline-tooltip {
+    left: 0;
+    transform: translateX(0);
+    transform: translateY(-20px);
+}
+
+/* Right-most item */
+.timeline-item:last-child .timeline-tooltip {
+    left: auto;
+    right: 0;
+    transform: translateX(0);
+    transform: translateY(-20px);
+}
+
 
 /* CS Projects Section */
 .cs_projects {
