@@ -129,3 +129,11 @@ if (pages.length > 0 && nextPage && prevPage && pageIndicator) {
 
     showPage(0);
 }
+
+
+// Image Zoom
+document.querySelectorAll('.poster-image img').forEach(img => {
+    img.addEventListener('click', () => {
+        img.classList.toggle('zoomed');
+    });
+});
