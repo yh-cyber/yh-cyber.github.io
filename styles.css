@@ -531,6 +531,14 @@ html {
     display: block;
 }
 
+.vid-container {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  justify-content: center; /* Centers horizontally */
+  align-items: center;
+}
+
 .image-subtitle {
     text-align: center;
     color: var(--text-secondary);
