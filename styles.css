@@ -271,7 +271,6 @@ html {
     position: absolute;
     bottom: 55px;
     opacity: 0;
-    pointer-events: none;
     background: var(--navback);
     border: 1px solid var(--accent);
     border-radius: 12px;
@@ -704,6 +703,7 @@ html {
 .essay-section h4{
     text-decoration: underline var(--white) 3px;
 }
+
 
 /* Footer */
 .footer {
