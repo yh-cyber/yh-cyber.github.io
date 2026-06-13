@@ -195,12 +195,19 @@ html {
 
 .skills-content {
     display: flex;
+    width: max-content;
+    animation: marquee 25s linear infinite;
+    will-change: transform;
+}
+
+.skills-track {
+    display: flex;
+    align-items: center;
     gap: 40px;
-    animation: marquee 20s linear infinite;
     white-space: nowrap;
     font-size: 18px;
     color: var(--white);
-    width: max-content; /* Adjust for seamless looping */
+    padding-right: 40px;
 }
 
 @keyframes marquee {
@@ -209,7 +216,7 @@ html {
     }
 
     100% {
-        transform: translateX(calc(-50% - 20px)); /* Adjust 20 px for seamless looping */
+        transform: translateX(-50%);
     }
 }
 
@@ -285,7 +292,7 @@ html {
     margin-top: 0;
 }
 
-.timeline-item:hover .timeline-tooltip {
+.timeline-dot:hover ~ .timeline-tooltip {
     opacity: 1;
     transform: translateY(-20px);
 }
