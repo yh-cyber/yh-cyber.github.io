@@ -275,6 +275,7 @@ html {
 }
 
 .timeline-tooltip {
+    pointer-events: none;
     position: absolute;
     bottom: 55px;
     opacity: 0;
@@ -312,6 +313,15 @@ html {
     transform: translateY(-20px);
 }
 
+.social2 a {
+    color: var(--white);
+    position: relative;
+    z-index: auto;
+}
+
+.social2 a:hover {
+    color: var(--accent);
+}
 
 /* CS Projects Section */
 .cs_projects {
