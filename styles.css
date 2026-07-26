@@ -512,9 +512,17 @@ html {
 
 .links {
     display: flex;
-    gap: 15px;  
+    gap: 20px;  
     align-items: center;
     justify-content: center;
+}
+
+.gitlink {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px; /* Space between icons */
+    margin-top: 35px;
 }
 
 .gitlink a {
@@ -532,7 +540,8 @@ html {
 }
 
 .devpostlink img{
-    margin-top: 45px;
+    margin-top: 75px;
+    justify-content: center;
     align-content: center;
     filter: brightness(0) invert(1);
 }
