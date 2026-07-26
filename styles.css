@@ -76,6 +76,10 @@ html {
     .socials {
         display: none;
     }
+
+    .navbar a[href="#passion_projects"] {
+        display: none;
+    }
 }
 
 
@@ -85,12 +89,9 @@ html {
     align-items: center;
     justify-content: space-between; /* Add space between hero text and image */
     width: 80%;
-
     margin-top: 50px;
     min-height: 70vh;
-
     padding: 0 10%; 
-
     gap: 60px; /* Add gap between hero text and image */
 }
 
@@ -121,11 +122,8 @@ html {
 .hero-image img {
     width: 325px;
     height: 325px;
-
     object-fit: cover;
-
     border-radius: 50%;
-
     box-shadow: 0 0 30px rgba(204,153,204,0.4);
 }
 
@@ -139,9 +137,7 @@ html {
     color: var(--white);
     border-right: 2px solid var(--accent);
     padding-right: 5px;
-
     animation: blink 0.7s infinite;
-
     min-width: 350px;
 }
 
@@ -378,7 +374,7 @@ html {
     padding-top: 30px; /*For padding on top*/
 }
 
-.project-carousel {
+.cs-project-carousel {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 30px;
@@ -469,6 +465,13 @@ html {
     width: 80%;
     padding: 0 10%;
     margin-top: 125px;
+}
+
+.project-carousel {
+    display: flex;
+    gap: 30px;
+    align-items: stretch;
+    transition: transform 0.5s ease;
 }
 
 .home-button {
