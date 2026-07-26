@@ -379,7 +379,8 @@ html {
 }
 
 .project-carousel {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 30px;
     align-items: stretch;
     transition: transform 0.5s ease;

@@ -84,12 +84,6 @@ function setupCarousel(carouselId, nextId, prevId) {
 }
 
 setupCarousel(
-    "csprojectCarousel",
-    "nextBtn1",
-    "prevBtn1"
-);
-
-setupCarousel(
     "passionprojectCarousel",
     "nextBtn2",
     "prevBtn2"
