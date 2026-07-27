@@ -77,7 +77,7 @@ html {
         display: none;
     }
 
-    .navbar a[href="#passion_projects"] {
+    .navbar a[href*="#passion_projects"] {
         display: none;
     }
 }
