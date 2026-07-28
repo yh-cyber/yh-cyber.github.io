@@ -768,3 +768,7 @@ html {
     background: var(--navback);
     color: var(--text-secondary);
 }
+
+.footer p {
+    font-size: 13.5px;
+}
