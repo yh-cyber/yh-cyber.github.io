@@ -427,6 +427,23 @@ html {
     bottom: 5px;
 }
 
+.code-block {
+    background: #172034;
+    border: 1px solid var(--accent);
+    border-radius: 15px;
+    margin: 20px 0;
+    padding: 15px;
+    overflow-x: auto;
+    display: flex;
+    justify-content: center;
+}
+
+.code-block pre {
+    font-family: "Source Code Pro", monospace;
+    font-size: 14px;
+    color: var(--white);
+}
+
 @media (max-width: 768px) {
     .project-card {
         min-width: 300px;

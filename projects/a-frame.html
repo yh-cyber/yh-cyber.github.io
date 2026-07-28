@@ -12,6 +12,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&family=Turret+Road:wght@200;300;400;500;700;800" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -81,7 +82,7 @@
         </div>
         <p>
             This project was my first foray into the world of 3D development, and I was excited to see what I could cook up!
-
+        </p>
         </section>
 
         <section id="development">
@@ -99,7 +100,33 @@
             So for example, in OOP, a bicycle class would have properties like speed, color, and methods like pedal(). In ECS, you would have a bicycle entity, and attach a speed component, a color component, and a pedal component to it.
         </div>
         <p>
-            ECS is used  
+            In A-frame, each entitiy-component par is represented by 
+            <pre class="code-block"> &lt; a-entity  component1=&quot;component1-name&quot; component2=&quot;component2-name&quot; &gt; </pre> 
+            There are several built-in entities and components both from the A-Frame library and from the community, which you can use to create your own 3D scenes. But what I really found intersting was that
+            aside from the basic built in components, you could also create your own custom components using JS, using <span class="important-text">AFRAME.registerComponent()</span>. For example, to register a new <i>log</i> component, you could do the following: 
+        </p>
+        <pre class="code-block">
+AFRAME.registerComponent('log', {
+    schema: {type: 'string'},
+
+  init: function () {
+    var stringToLog = this.data;
+    console.log(stringToLog);
+  }
+});</pre>
+        <p>
+            See <span class="social-link"><a href="https://aframe.io/docs/1.8.0/introduction/javascript-events-dom-apis.html">here</a></span> for more info.
+        </p>
+        <br><hr><br>
+        <p>
+            OOOKAYYYY Enough Intro.
+            <br><br>
+            After a little brainstorming, I decided to build a Laser Mirror Room, because I wanted to explore the physics system in 3D development. 
+            I had no idea where to start, so I studied some A-Frame examples; I found an amazing compilation of examples for beginners by <span class="social-link"><a href="https://stemkoski.github.io/A-Frame-Examples/">Prof. Lee Stemkoski</a></span>.
+            <br><br>
+            Several A-Frame libraries I used that were really helpful in my development process were:
+            A-Frame 360 Image Gallery Boilerplate
+            Don McCurdy’s aframe-physics-system
         </p>
         </section>
 
