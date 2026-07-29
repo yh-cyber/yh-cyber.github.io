@@ -44,12 +44,12 @@
         <h3><i>July 2026</i></h3>
 
         <div class="gitlink">
-            <a href="https://github.com/yh-cyber"><i class="fab fa-github"></i></a>
-            <a href="https://yh-cyber.github.io"><i class="fas fa-up-right-from-square"></i></a>
+            <a href="https://github.com/yh-cyber/a-frame"><i class="fab fa-github"></i></a>
+            <a href="https://3d-laser-mirror.netlify.app"><i class="fas fa-up-right-from-square"></i></a>
         </div>
 
         <div class="project-image">
-            <img src="../assets/DUMMY.png" alt="----">
+            <img src="../assets/DUMMY.png" alt="Initial Position Player Spawns To">
             <span class="image-subtitle"> <i>---</i> </span>
         </div>
         <br><br>
@@ -65,7 +65,11 @@
         <section id="overview">
         <h2>Overview</h2>
         <p>
-            INFOINFOINFO
+            My first exposure to WebVR, this project is a 3D laser mirror puzzle game built using A-Frame.
+            <br><br>
+            The player spawns into a room with a laser emitter, a target, and several mirrors. The player can rotate the mirrors to reflect the laser beam and hit the target.
+            <br><br>
+            Overall, this project was a great learning experience for me, and I learned a lot about 3D web development, A-Frame, and the ECS architecture (yes there's something other than OOP)!
         </p>
         </section>
 
@@ -88,9 +92,9 @@
         <section id="development">
         <h2>Development</h2>
         <p>
-            I started off by experimenting with the basic 3D shapes that A-Frame provides, such as boxes, spheres, and cylinders. I learned how to position them in 3D space, apply colors and textures, e.t.c. 
+            I started off by reading the official <span class="doc-link"><a href="https://aframe.io/docs/1.8.0/introduction/">A-Frame documentation</a></span>.
             <br><br>
-            Then while reading the documentation, I found that instead of using OOP, A-Frame uses an <span class="important-text">Entity-Component-System</span> (ECS) architecture, which is a different way of thinking about programming.
+            One of the first things I found was that instead of using OOP, A-Frame uses an <span class="important-text">Entity-Component-System</span> (ECS) architecture, which is a different way of thinking about programming.
         </p>
         <div class="important-section">
             ECS is a design pattern that is commonly used in game development.
@@ -115,20 +119,27 @@ AFRAME.registerComponent('log', {
   }
 });</pre>
         <p>
-            See <span class="social-link"><a href="https://aframe.io/docs/1.8.0/introduction/javascript-events-dom-apis.html">here</a></span> for more info.
+            See <span class="doc-link"><a href="https://aframe.io/docs/1.8.0/introduction/javascript-events-dom-apis.html">here</a></span> for more info.
         </p>
         <br><hr><br>
         <p>
             OOOKAYYYY Enough Intro.
             <br><br>
             After a little brainstorming, I decided to build a Laser Mirror Room, because I wanted to explore the physics system in 3D development. 
-            I had no idea where to start, so I studied some A-Frame examples; I found an amazing compilation of examples for beginners by <span class="social-link"><a href="https://stemkoski.github.io/A-Frame-Examples/">Prof. Lee Stemkoski</a></span>.
-            <br><br>
+            I had no idea where to start, so I found some very helpful resources:
+        </p>
+        <div class="important section">
+            <ul><span class="doc-link"><a href="https://stemkoski.github.io/A-Frame-Examples/">Compilation of examples for beginners by Prof. Lee Stemkoski</a></span></ul>
+            <ul><span class="doc-link"><a href="http://www.youtube.com/@theDart76">YouTube Channel with A-frametutorials</a></span></ul>
+            <ul><span class="doc-link"><a href="https://aframe.io/aframe-registry/">A-Frame Registry</a></span></ul>
+            <ul><span class="doc-link"><a href="https://aframe.io/docs/1.8.0/components">List of Components</a></span></ul>
+        </div>
+        <p>
+
             Several A-Frame libraries I used that were really helpful in my development process were:
             A-Frame 360 Image Gallery Boilerplate
             Don McCurdy’s aframe-physics-system
-            Aframe Registry : https://aframe.io/aframe-registry/
-            List of Components: https://aframe.io/docs/1.8.0/components
+             PHYSISCS only handle collision detection, gravity, and rigid body dynamics.
             
         </p>
         </section>
