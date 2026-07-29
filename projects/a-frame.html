@@ -49,8 +49,8 @@
         </div>
 
         <div class="project-image">
-            <img src="../assets/DUMMY.png" alt="Initial Position Player Spawns To">
-            <span class="image-subtitle"> <i>---</i> </span>
+            <img src="../assets/DUMMY.png" alt="Initial Position Player Spawns To Screenshot">
+            <span class="image-subtitle"> <i>Initial Position Player Spawns To</i> </span>
         </div>
         <br><br>
 
@@ -92,7 +92,7 @@
         <section id="development">
         <h2>Development</h2>
         <p>
-            I started off by reading the official <span class="doc-link"><a href="https://aframe.io/docs/1.8.0/introduction/">A-Frame documentation</a></span>.
+            I started off by reading the official A-Frame documentation.
             <br><br>
             One of the first things I found was that instead of using OOP, A-Frame uses an <span class="important-text">Entity-Component-System</span> (ECS) architecture, which is a different way of thinking about programming.
         </p>
@@ -104,9 +104,11 @@
             So for example, in OOP, a bicycle class would have properties like speed, color, and methods like pedal(). In ECS, you would have a bicycle entity, and attach a speed component, a color component, and a pedal component to it.
         </div>
         <p>
-            In A-frame, each entitiy-component par is represented by 
-            <pre class="code-block"> &lt; a-entity  component1=&quot;component1-name&quot; component2=&quot;component2-name&quot; &gt; </pre> 
-            There are several built-in entities and components both from the A-Frame library and from the community, which you can use to create your own 3D scenes. But what I really found intersting was that
+            In A-frame, each entitiy-component par is represented by </p>
+            <pre class="code-block">
+&lt; a-entity  component1=&quot;component1-name&quot; 
+component2=&quot;component2-name&quot; &gt; </pre> 
+        <p> There are several built-in entities and components both from the A-Frame library and from the community, which you can use to create your own 3D scenes. But what I really found intersting was that
             aside from the basic built in components, you could also create your own custom components using JS, using <span class="important-text">AFRAME.registerComponent()</span>. For example, to register a new <i>log</i> component, you could do the following: 
         </p>
         <pre class="code-block">
@@ -128,11 +130,14 @@ AFRAME.registerComponent('log', {
             After a little brainstorming, I decided to build a Laser Mirror Room, because I wanted to explore the physics system in 3D development. 
             I had no idea where to start, so I found some very helpful resources:
         </p>
-        <div class="important section">
-            <ul><span class="doc-link"><a href="https://stemkoski.github.io/A-Frame-Examples/">Compilation of examples for beginners by Prof. Lee Stemkoski</a></span></ul>
-            <ul><span class="doc-link"><a href="http://www.youtube.com/@theDart76">YouTube Channel with A-frametutorials</a></span></ul>
-            <ul><span class="doc-link"><a href="https://aframe.io/aframe-registry/">A-Frame Registry</a></span></ul>
-            <ul><span class="doc-link"><a href="https://aframe.io/docs/1.8.0/components">List of Components</a></span></ul>
+        <div class="important-section">
+            <span class="doc-link"><a href="https://stemkoski.github.io/A-Frame-Examples/">Compilation of examples for beginners by Prof. Lee Stemkoski</a></span>
+            <br><br>
+            <span class="doc-link"><a href="http://www.youtube.com/@theDart76">YouTube Channel with A-frametutorials</a></span>
+            <br><br>
+            <span class="doc-link"><a href="https://aframe.io/aframe-registry/">A-Frame Registry</a></span>
+            <br><br>
+            <span class="doc-link"><a href="https://aframe.io/docs/1.8.0/components">List of Components</a></span>
         </div>
         <p>
 

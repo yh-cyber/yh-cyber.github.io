@@ -184,7 +184,7 @@ html {
 
 .doc-link a {
     color: var(--accent);
-    text-decoration: underline;
+    text-decoration: underline dotted 2px;
     transition: 0.3s;
 }
 
@@ -634,7 +634,9 @@ html {
 .important-section {
     border-left: 3px solid var(--accent);
     padding-left: 30px;
-    margin: 20px 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin: 10px 0 45px 0;
     background: rgba(99, 51, 51, 0.02);
     border-radius: 6px;
 }
