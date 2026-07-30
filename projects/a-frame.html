@@ -92,7 +92,7 @@
         <section id="development">
         <h2>Development</h2>
         <p>
-            I started off by reading the official A-Frame documentation.
+            I started by reading the official A-Frame documentation.
             <br><br>
             One of the first things I found was that instead of using OOP, A-Frame uses an <span class="important-text">Entity-Component-System</span> (ECS) architecture, which is a different way of thinking about programming.
         </p>
@@ -128,7 +128,8 @@ AFRAME.registerComponent('log', {
             OOOKAYYYY Enough Intro.
             <br><br>
             After a little brainstorming, I decided to build a Laser Mirror Room, because I wanted to explore the physics system in 3D development. 
-            I had no idea where to start, so I found some very helpful resources:
+            <br><br>
+            I found some very good resources to help me get started:
         </p>
         <div class="important-section">
             <ul>
@@ -139,13 +140,35 @@ AFRAME.registerComponent('log', {
             </ul>
         </div>
         <p>
-            After the basics, it was mostly just about adding entities, 
+            After the basics, it was mostly just about adding entities and playing around with the components to get the desired shape and position, through a <i>lot</i> of trial and error.
+            It took a while to get used to because everything has a 3rd dimension to it: the z-axis.
+        </p>
+        <div class="project-image">
+            <img src="../assets/xyz-axis.png" alt="xyz axis drawing">
+            <span class="image-subtitle"> <i>Had this by my side the whole time</i> </span>
+        </div>
+        <p>
+            <br>
+            Then I added JS to some of the objects for interactivity (eg pressing on a mirror rotates it). I created 
+            a few new entities too, like 'player' for the user, and 'room-boundary' to restrict the user's environment to only the laser room.
             <br><br>
-            Several A-Frame libraries I used that were really helpful in my development process were:
-            A-Frame 360 Image Gallery Boilerplate
-            Don McCurdy’s aframe-physics-system
-             PHYSISCS only handle collision detection, gravity, and rigid body dynamics.
-            
+            I also found quite a few helpful libraries, like the 
+            A-Frame 360 Image Gallery Boilerplate, and the A-frame environment component 
+            (unfortunately I couldn't use any in this project as it was pretty unique for A-frame ig &#128526;, so I had to custom make my own scenes).
+            <br><br>
+            Then came the crashing realization: The library I was hoping to explore - Don McCurdy’s aframe-physics-system - 
+            only handles collision detection, gravity, and rigid body dynamics. So like it's great for most dynamics required in action video games and e.t.c, 
+            but it doesn't have a light-mirror reflection element (exactly what I needed &#128577;).
+        </p>
+        <div class="important-section">
+            So now I had two choice: <br>
+            1) Scrap the physics, hardcode the game logic <br>
+            2) Create a <i> custom 'physics' system </i> for the laser beam,
+            so that it 
+        </div>
+            S
+            <br><br>
+            ----
         </p>
         </section>
 
@@ -155,7 +178,7 @@ AFRAME.registerComponent('log', {
             ECS is use in game development because unlike 2D apps which have fixed behaviour, 3D apps have a lot of moving parts, and ECS allows for more flexibility and scalability.
             <br><br>
             For me this was new, and took some time to wrap my hear around. 
-            I found it really cool exploring how A-frame was built on Javscript, see <a href="https://aframe.io/docs/1.8.0/introduction/html-and-primitives.html">here</a> for more info.
+            I found it really cool exploring how A-frame was built on Javscript, see <span class="doc-link"><a href="https://aframe.io/docs/1.8.0/introduction/html-and-primitives.html">here</a></span> for more info.
         </p>
         </section>
 
