@@ -37,7 +37,7 @@ html {
     transition: 0.3s;
     float: left;
     text-align: center;
-    padding: 10px 10px;
+    padding: 10px 13px;
     text-decoration: none;
     font-size: 17px;
     margin-top: 7px;
@@ -592,6 +592,7 @@ html {
     height: auto;
     border-radius: 24px;
     display: block;
+    border: 1.3px dashed #ee6c4d;
 }
 
 .vid-container {
