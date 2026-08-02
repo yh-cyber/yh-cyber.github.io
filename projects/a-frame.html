@@ -65,7 +65,7 @@
         <section id="overview">
         <h2>Overview</h2>
         <p>
-            My first exposure to WebVR, this project is a 3D laser mirror puzzle game built using A-Frame.
+            My first exposure to WebVR, this project is a 3D laser mirror puzzle game built using A-Frame, and a little bit of JS.
             <br><br>
             The player spawns into a room with a laser emitter, a target, and several mirrors. The player can rotate the mirrors to reflect the laser beam and hit the target.
             <br><br>
@@ -82,7 +82,7 @@
         <div class="important-section">
             A-Frame is a an easy yet powerful web framework for building VR stuff. It uses HTML-like syntax to define 3D scenes, and is based on top of Three.js.
             <br><br>
-            It's been used by Google, Disney, Samsung, Toyota, and many more companies!
+            It's been used by Google, Disney, Samsung, Toyota, and many more notable companies!
         </div>
         <p>
             This project was my first foray into the world of 3D development, and I was excited to see what I could cook up!
@@ -164,9 +164,9 @@ AFRAME.registerComponent('log', {
             So now I had two choice: <br>
             1) Scrap the physics, hardcode the game logic <br>
             2) Create a <i> custom 'physics' system </i> for the laser beam,
-            so that it 
+            so that it reflects off any x-number of mirrors.
         </div>
-            S
+            &#128527; Obviously I went for 2.
             <br><br>
             ----
         </p>
@@ -175,6 +175,8 @@ AFRAME.registerComponent('log', {
         <section id="lessons">
         <h2>Lessons</h2>
         <p>
+            ----
+            <br><br>
             ECS is use in game development because unlike 2D apps which have fixed behaviour, 3D apps have a lot of moving parts, and ECS allows for more flexibility and scalability.
             <br><br>
             For me this was new, and took some time to wrap my hear around. 
