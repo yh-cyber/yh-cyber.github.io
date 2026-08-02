@@ -200,7 +200,7 @@ html {
 
 /* New Skills Section */
 .skills-grid {
-    margin-top: 30px;
+    margin-top: 40px;
     display: grid;
     gap: 15px;
 }
