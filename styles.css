@@ -193,12 +193,13 @@ html {
     text-decoration: underline dotted;
 }
 
-.skills-header h3 {
+.sub-header h3 {
     margin-top: 45px;
     font-size: 23px;
 }
 
-/* New Skills Section */
+
+/* Skills Section */
 .skills-grid {
     margin-top: 20px;
     display: grid;
@@ -236,33 +237,21 @@ html {
 }
 
 
-/* Skills Section - No longer in use */
-/* If you ever want to use the marquee again:
-    <div class="skills">
-      <div class="skills-content">
-        <div class="skills-track">
-        ---- content here ----
-        </div>
+/* Awards Section */
 
-        <div class="skills-track">
-        ---- same content here ----
-        </div>
-    </div>
-    </div>
-*/
-.skills0{
+.marquee-container{
     overflow: hidden;
     padding: 20px 0;
     border-top: 1px solid #1e293b;
     border-bottom: 1px solid #1e293b;
 }
-.skills-content0 {
+.marquee-content {
     display: flex;
     width: max-content;
     animation: marquee 25s linear infinite;
     will-change: transform;
 }
-.skills-track0 {
+.marquee-track {
     display: flex;
     align-items: center;
     gap: 40px;
@@ -271,6 +260,7 @@ html {
     color: var(--white);
     padding-right: 40px;
 }
+
 @keyframes marquee {
     0% {
         transform: translateX(0);
@@ -279,7 +269,6 @@ html {
         transform: translateX(-50%);
     }
 }
-/* ---------------- */
 
 
 /* Timeline */

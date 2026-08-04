@@ -166,16 +166,30 @@ AFRAME.registerComponent('log', {
             2) Create a <i> custom 'physics' system </i> for the laser beam,
             so that it reflects off any x-number of mirrors.
         </div>
-            &#128527; Obviously I went for 2.
+            &#128527; I ended up choosing something in between.
             <br><br>
-            ----
+            First off, I generated the laser dynamically in JavaScript using A-Frame's line component instead of hardcoding it into the scene. This gave me complete control over how the laser behaved.
+            And every time the scene changed, I updated the laser by answering three questions:
+            <ol>
+                <li>Where did the laser hit?</li>
+                <li>Which way is the mirror facing?</li>
+                <li>Which direction should the reflected beam go?</li>
+            </ol>
+            At first, I considered using the standard reflection equation to calculate the outgoing direction of the beam. But it would just unneccissarily complicate things. 
+            <br><br>
+            So instead, since the mirrors only rotate in 45° increments, I made a generalized reflection system that represents the laser's direction as a vector.
+            Whenever the beam hits a mirror, its direction vector is updated according to the mirror's rotation. If it hits a wall instead, the beam simply stops.
+            <br><br>
+            -----
+            <br><br>
+            And then of course, there were a lot of other things I fixed throughout the development, eg normalizing the reflection vector (so the code doesn't break if the mirror is rotated multiple times), fixing the order I put the JS code in so that things load in the right order... 
         </p>
         </section>
 
         <section id="lessons">
         <h2>Lessons</h2>
         <p>
-            ----
+            A-Frame only outlines what exists, and JS determines how it behaves.
             <br><br>
             ECS is use in game development because unlike 2D apps which have fixed behaviour, 3D apps have a lot of moving parts, and ECS allows for more flexibility and scalability.  For me this was new, and took some time to wrap my hear around. 
             <br><br>
