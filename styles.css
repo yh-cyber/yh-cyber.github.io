@@ -775,6 +775,27 @@ html {
   100% { transform: rotate(360deg); }
 }
 
+/* Temp See Draft */
+.See-Draft {
+    display: flex;
+    align-items: center;    
+    justify-content: center;
+    background: var(--accent);
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0 auto; 
+}
+.See-Draft a {
+    color: var(--navback);
+    text-decoration: none;
+    font-size: 16px;
+}
+.See-Draft a:hover {
+    text-decoration: none;
+}
+
 
 /* Essay Framer */
 .paper-frame {
