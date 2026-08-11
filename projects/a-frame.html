@@ -164,11 +164,11 @@ AFRAME.registerComponent('log', {
             So now I had two choice: <br>
             1) Scrap the physics, hardcode the game logic <br>
             2) Create a <i> custom 'physics' system </i> for the laser beam,
-            so that it reflects off any x-number of mirrors.
+            so that it reflects off multiple mirrors without having to manually code every possible mirror configuration.
         </div>
-            &#128527; I ended up choosing something in between. A system so that it could reflect of any x-number of mirrors - so as not to hardcode it - but not a <i>full</i> physics system.
+            &#128527; I ended up choosing something in between: A custom laser-behaviour system that handles the reflection logic, without trying to build an entire physics system from scratch.
             <br><br>
-            First off, I generated the laser dynamically in JavaScript using A-Frame's line component instead of hardcoding it into the scene. This gave me complete control over how the laser behaved.
+            First off, I generated the laser dynamically in JavaScript using A-Frame's line component instead of hardcoding it into the scene. This gave me complete control over how the laser behaved. Then, whenever a mirror was rotated, I recalculated the laser path based on the current state of the mirrors.
             And every time the scene changed, I updated the laser by answering three questions:
             <ol>
                 <li>Where did the laser hit?</li>
@@ -180,23 +180,35 @@ AFRAME.registerComponent('log', {
             So instead, since the mirrors only rotate in 45° increments, I made a generalized reflection system that represents the laser's direction as a vector (x, z).
             Whenever the beam hits a mirror, its direction vector is updated according to the mirror's rotation. If it hits a wall instead, the beam seems to stop, and if it hits the target, the game is won.
             <br><br>
-            Easier said than done, it tool a lot of trial and error to get the laser to reflect correctly off the mirrors, and I had to debug a lot of issues with the reflection logic (thank god for console.log()!). And then of course, there were a lot of other things I fixed throughout the development, eg normalizing the reflection vector (so the code doesn't break if the mirror is rotated multiple times), fixing the order I put the JS code in so that things load in the right order, e.t.c. 
+            Easier said than done, it tool a lot of trial and error to get the laser to reflect correctly off the mirrors, and I had to debug a lot of issues with the reflection logic (thank god for console.log()!). And then of course, there were a lot of other things I fixed throughout the development, eg normalizing the rotation angle (so the reflection logic doesn't break if the mirror is rotated multiple times), fixing the order I put the JS code in so that things load in the right order, e.t.c. 
             <br><br>
-            I faced quite an issue as well with how to detect wheat object the laser hits. -----
-        </p>
+            I faced quite an issue as well with how to detect when the laser hits a mirror. I considered using Raycaster() from threejs, but it was a bit too complicated for my needs. So instead, I created my own simple collision-detection logic. Rather than checking for physical collisions, the program checks whether a mirror lies along the laser's current path by comparing its position with the laser's starting point and direction vector. If a mirror is in the laser's path, the laser stops at that mirror and a new reflected beam is calculated from there.
+            <br><br>
+            I then extended this logic to handle the second mirror. The program checks whether the reflected beam from the first mirror reaches the second mirror. If it does, the beam is drawn up to the second mirror and then reflected again according to the second mirror's rotation. This meant I could change the mirrors' orientations without having to manually hardcode a separate laser path for every possible combination. Target Detection added using the same idea.
+            <br><br>
+            Finally, I wrapped up with some enhancements, like an opening and winning message, a reset button, and a flashing button when target hit.
         </section>
 
         <section id="lessons">
         <h2>Lessons</h2>
         <p>
-            A-Frame only outlines what exists, and JS determines how it behaves.
-            <br><br>
-            ECS is use in game development because unlike 2D apps which have fixed behaviour, 3D apps have a lot of moving parts, and ECS allows for more flexibility and scalability.  For me this was new, and took some time to wrap my hear around. 
-            <br><br>
-            I also found it really cool exploring how A-frame was built on Javscript, see <span class="doc-link"><a href="https://aframe.io/docs/1.8.0/introduction/html-and-primitives.html">here</a></span> for more info. 
-            I'd learned about building languages based on others in CSC111, but this was the first time I saw it in action.
-            <br><br> 
-            ------
+            I learnt quite a bit from this project, and it was definitely a great learning experience!
+            I remember starting this project thinking it would be simple and finished in 3 days, but it turned out to be a lot more complex than I expected.
+            Some highlights: 
+            <ul>
+                <li>A-Frame only gives the structure, and JS determines how it behaves. Techinically A-Frame is great for builing the framework of your 3D web app, but it doesn't have a lot of built-in functionality, so you have to often have tobuild a lot of things yourself. 
+                </li>
+                <li>Start simple and then iterate to add features. If you try to add in all your functionality at once, it becomes overwhelming and difficult. 
+                </li>
+                <li>The order you put your JavaScript code in can affect how the application behaves!!! I can't count how many times I fell into this trap. 
+                </li>
+                <li>ECS is use in game development because unlike 2D apps which have fixed behaviour, 3D apps have a lot of moving parts, and ECS allows for more flexibility and scalability.  For me this was new, and took some time to wrap my hear around. 
+                </li>
+                <li> I also found it really cool exploring how A-frame was built on Javscript, see <span class="doc-link"><a href="https://aframe.io/docs/1.8.0/introduction/html-and-primitives.html">here</a></span> for more info. 
+                I'd learned about building languages based on others in CSC111, but this was the first time I saw it in action.
+                </li>
+            </ul>
+            Next up, three.js?
         </p>
         </section>
 
