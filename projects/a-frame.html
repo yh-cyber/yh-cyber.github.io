@@ -166,7 +166,7 @@ AFRAME.registerComponent('log', {
             2) Create a <i> custom 'physics' system </i> for the laser beam,
             so that it reflects off any x-number of mirrors.
         </div>
-            &#128527; I ended up choosing something in between.
+            &#128527; I ended up choosing something in between. A system so that it could reflect of any x-number of mirrors - so as not to hardcode it - but not a <i>full</i> physics system.
             <br><br>
             First off, I generated the laser dynamically in JavaScript using A-Frame's line component instead of hardcoding it into the scene. This gave me complete control over how the laser behaved.
             And every time the scene changed, I updated the laser by answering three questions:
@@ -177,12 +177,12 @@ AFRAME.registerComponent('log', {
             </ol>
             At first, I considered using the standard reflection equation to calculate the outgoing direction of the beam. But it would just unneccissarily complicate things. 
             <br><br>
-            So instead, since the mirrors only rotate in 45° increments, I made a generalized reflection system that represents the laser's direction as a vector.
-            Whenever the beam hits a mirror, its direction vector is updated according to the mirror's rotation. If it hits a wall instead, the beam simply stops.
+            So instead, since the mirrors only rotate in 45° increments, I made a generalized reflection system that represents the laser's direction as a vector (x, z).
+            Whenever the beam hits a mirror, its direction vector is updated according to the mirror's rotation. If it hits a wall instead, the beam seems to stop, and if it hits the target, the game is won.
             <br><br>
-            -----
+            Easier said than done, it tool a lot of trial and error to get the laser to reflect correctly off the mirrors, and I had to debug a lot of issues with the reflection logic (thank god for console.log()!). And then of course, there were a lot of other things I fixed throughout the development, eg normalizing the reflection vector (so the code doesn't break if the mirror is rotated multiple times), fixing the order I put the JS code in so that things load in the right order, e.t.c. 
             <br><br>
-            And then of course, there were a lot of other things I fixed throughout the development, eg normalizing the reflection vector (so the code doesn't break if the mirror is rotated multiple times), fixing the order I put the JS code in so that things load in the right order... 
+            I faced quite an issue as well with how to detect wheat object the laser hits. -----
         </p>
         </section>
 
