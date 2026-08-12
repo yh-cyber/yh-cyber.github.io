@@ -88,7 +88,49 @@
         <section id="development">
         <h2>Development</h2>
         <p>
-            INFOINFOINFO
+            Frontend
+            ↓
+            Generation Service
+            ↓
+            Generation Orchestration
+            ↓
+            ⭐ Windowed Blending Sampler  ← MY TICKET
+            ↓
+            Model Pipeline
+            ↓
+            Model Inference
+
+
+            OVERLAPPING WINDOW ENRATION LOGIC
+
+            1. Figure out the windows
+            Given a region, determine where the overlapping patches should be placed so the entire region is covered.
+
+            2. Create deterministic noise
+            Given a seed, generate the starting noise. If given same seed, same noise
+
+            3. Process each window
+            Each window gets passed to the Model Pipeline.
+
+            4. Blend the results
+
+
+
+
+            inference.py	Actually run the neural model    Model Inference
+            encoding.py	Convert terrain ↔ model representation    Elevation Encoding
+            pipeline.py	Turn one input patch into one finished patch   Model Pipeleing
+            sampler.py	Your overlapping-window generation logic       Window Bleniding Sampler
+            store.py	Store generated terrain            Terrain Store
+            orchestration.py	Coordinate the whole generation process         Generation Orchestation
+            service.py	API for the frontend         Generation Service
+            web/	3D Visualizer
+
+
+
+            
+
+
         </p>
         </section>
 
