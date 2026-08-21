@@ -505,18 +505,6 @@ html {
     color: var(--white);
 }
 
-@media (max-width: 768px) {
-    .cs-project-carousel {
-        grid-template-columns: minmax(0, 1fr);
-    }
-
-    .project-card {
-        min-width: 0;
-        width: 100%;
-        box-sizing: border-box;
-    }
-}
-
 
 /* Passion Projects Section */
 .passion_projects {
