@@ -536,12 +536,6 @@ html {
     padding: 0;
 }
 
-@media (max-width: 768px) {
-.passion_projects h2 {
-    font-size: 0.8rem;
-}
-}
-
 .passion_projects p {
     color: var(--white);
     font-size: 18px;
