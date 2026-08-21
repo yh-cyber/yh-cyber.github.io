@@ -456,6 +456,18 @@ html {
     flex-direction: column;
 }
 
+@media (max-width: 768px) {
+    .cs-project-carousel {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .project-card {
+        min-width: 0;
+        width: calc(100% - 16px);
+        justify-self: center;
+    }
+}
+
 .project-card:hover {
     transform: translateY(-10px);
     border-color: var(--accent);
@@ -530,6 +542,24 @@ html {
     text-align: full-justify;
 }
 
+.carousel-container2 {
+    overflow-x: hidden;
+    overflow-y: visible;
+    padding-top: 30px; /*For padding on top*/
+}
+
+.project-card2 {
+    min-width: 350px;
+    background: var(--navback);
+    border: 1px solid var(--white);
+    border-radius: 20px; 
+    /* Removed overflow:hidden */
+    text-decoration: none;
+    backdrop-filter: blur(10px);
+    transition: 0.3s;
+    display: flex;
+    flex-direction: column;
+}
 
 /* Project Display Section */
 .project-display {
