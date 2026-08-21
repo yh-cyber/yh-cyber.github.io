@@ -114,6 +114,12 @@ html {
     font-weight: 400;
 }
 
+@media (max-width: 768px) {
+.hero-text h2 {
+    font-size: 25px;
+}
+}
+
 .hero-text p {
     max-width: 500px;
     color: var(--white);
@@ -500,8 +506,14 @@ html {
 }
 
 @media (max-width: 768px) {
+    .cs-project-carousel {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
     .project-card {
-        min-width: 300px;
+        min-width: 0;
+        width: 100%;
+        box-sizing: border-box;
     }
 }
 
@@ -522,6 +534,12 @@ html {
     text-underline-offset: 5px;
     margin: 0;
     padding: 0;
+}
+
+@media (max-width: 768px) {
+.passion_projects h2 {
+    font-size: 35px;
+}
 }
 
 .passion_projects p {
