@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Personal Website">
+  <meta name="author" content="Yusyra Hossain">
+  <title>Yusyra Hossain</title>
+  <link rel="icon" type="image/png" href="../assets/favicon.png">
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&family=Turret+Road:wght@200;300;400;500;700;800" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo"><a href="/"><img src="../assets/logo.png" alt="Logo"></a></div>
+        <a href="../">Home</a>
+        <a href="../#cs_projects">CS Projects</a>
+        <a href="../#passion_projects">Passion Projects</a>
+      <div class="socials">
+        <a href="https://github.com/yh-cyber"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/yusyrahossain/"><i class="fab fa-linkedin"></i></a>
+        <a href="mailto:yusyra.hossain@mail.utoronto.ca"><i class="fas fa-envelope"></i></a>
+      </div>
+    </nav>
+    </header>
+
+    <section class = "project-display">
+
+        <!-- Back Button -->
+        <a href="../#cs_projects" class="home-button">
+            <b> < Back to Projects </b>
+        </a>
+        
+        <!-- Project Title -->
+        <h1 id="title"><b>UTQC Website</b></h1>
+        <h3><i>Me, Jaden Al Airdoos</i></h3>
+        <h3>*****</h3>
+        <h3><i>August 2026</i></h3>
+
+        <div class="gitlink">
+            <a href="https://github.com/utqc/utqc_website"><i class="fab fa-github"></i></a>
+            <a href="https://utqc-website.vercel.app"><i class="fas fa-up-right-from-square"></i></a>
+        </div>
+
+        <div class="project-image">
+            <img src="../assets/utqc/utqc-new-web.gif" alt="GIF, UTQC new website hompage scroll down">
+            <span class="image-subtitle"> <i>UTQC Website Homepage</i> </span>
+        </div>
+        <br><br>
+
+        <hr width="50%">
+        <div class="table-contents">
+          <a href="#overview">Overview</a> | <a href="#origin">Origin</a> | <a href="#development">Development</a> | <a href="#lessons">Lessons</a>
+        </div>
+        <hr width="50%"> <br>
+
+
+        <!--Blog-->
+        <section id="overview">
+        <h2>Overview</h2>
+        <p>
+          I led the complete redesign and development of the University of Toronto Quantum Computing Club's new
+          website, working with a team of web developers to build a new site from the ground up.
+          We moved from the restricted templates and plugins of WordPress to a much
+          more flexible custom development stack - HTML, CSS, and JS -
+          giving us a lot more control over the website!
+          <br><br>
+          I primarily took lead of the site's UI/UX and frontend development, planning, designing and implementing the core
+          pages, layouts, and reusable components, while coordinating with UTQC executives for content.
+          <br><br>
+          The result is a website that reflects the UTQC like never before! Check it out <span class="doc-link"><a href="https://utqc-website.vercel.app">here.</a></span>
+        </p>
+        </section>
+
+        <section id="origin">
+        <h2>Origin</h2>
+        <p>
+          It's June 2026, I get a WebDev position at UTQC. At this point, I'm just a member on the team, and the application 
+          clearly stated that no coding skills were required. The current website is, and always has been, managed on Wordpress.
+            <div class="project-image">
+            <img src="../assets/utqc/utqc prev website.gif" alt="GIF, UTQC new website hompage scroll down">
+            <span class="image-subtitle"> <i>UTQC Prev Website</i> </span>
+            </div>
+            <div class="project-image">
+            <img src="../assets/utqc/wordpress.png" alt="GIF, UTQC new website hompage scroll down">
+            <span class="image-subtitle"> <i>Wordpress of Prev Website</i> </span>
+            </div><br>
+          Our first meeting isn't till late July, so I try to play around with the Wordpress and see if I could give the web a glowup.
+          Unfortunatly (or shall I say, fortunately for me), I see why all the prev generations of UTQC webdevs were never able to put toghether a nice website.
+          It isn't possible, because <br> 1) We didn't have Wordpress Pro, and <br> 2) Almost every thing else that could be customized without Pro was restricted by the UofT domain, presumably for security reasons.
+          <br><br>
+          And so a little research later, I realized we could build our own website, while keeping the same domain, as promised by UofT for their Student Groups <span class="doc-link"><a href="https://www.studentlife.utoronto.ca/service/web-space-for-recognized-campus-clubs-and-groups/">here.</a></span>
+          <br><br>
+          I also brainstorm a little about how to host the new website and new components to include. Then I bring it up to the team, and Voila, I'm given team lead.
+        </p>
+        </section>
+
+        <section id="development">
+        <h2>Development</h2>
+        <p>
+          I started things off by doing a little research on what club websites usually include and such.
+          Then I planned the overall structure of the website and established the typography, layouts, colour scheme(based on logo), and
+          designed a few reusable design elements that would be repeated throughout the site to keep it cohesive.
+          <br><br>
+          We then shared the code on Github and hosted the site on Vercel, with plans to change the URL later. In the meantime, I also
+          linked the new website from the previous WordPress site so that 
+          visitors who reached the old website could still find the new one. This allowed for a smooth transition.
+          <br><br>
+          I tried to split up the implementation, but only 2 responded, and only 1 ended up contributing to the development. Jaden took charge of the JS 
+          side of this project, including API handling (for the Google Calander on events page), and animation. I was in charge of implementing the core pages, 
+          designing the UI with CSS, animating as much as possible with CSS (eg marquee/hover animations), communicating with the execs and getting info, content & feedback. We also held meeting with the president, who would tell us what he wanted in the website and I would adjust and plan accordingly. 
+            <div class="project-image">
+            <img src="../assets/utqc/daily_mess.jpg" alt="discord message by me to the execs">
+            <span class="image-subtitle"> <i>One of my daily messages</i> </span>
+            </div><br>
+          For me, I think the longest and hardest part was the UI designing. There were a lot of small decisions involved in making the site
+          feel cohesive yet readable, from choosing fonts and spacing to figuring out how information should be organized and presented. I went through several iterations before settling on the current design. It was also quite a pain 
+          making the website responsive across different screen sizes.
+            <div class="project-image">
+            <img src="../assets/utqc/inital_hero_design.png" alt="Blue Background with Quantum Computer and Logo">
+            <span class="image-subtitle"> <i>Initial Design of Hero Section</i> </span>
+            </div>
+            <div class="project-image">
+            <img src="../assets/utqc/playing_with_design_utqc.png" alt="Elements on Yellow and Navy Background">
+            <span class="image-subtitle"> <i>Working on Colours</i> </span>
+            </div><br>
+            And so after a gizzilion iterations, a few code breakdowns due to
+            conflicting changes on Git, and plenty of small design adjustments,
+            we finally had a website that we were happy with. However, the website is still an 
+            ongoing project, so we will be continuing to refine the design, add content, and improve its functionality as UTQC grows.
+            <br><br>
+            To ensure continuity as well, I documented the website's structure,
+            development setup, and major components in the project's GitHub
+            README. This makes it easier for future UTQC web developers to
+            understand the codebase and continue developing it after our term ends.
+        </p>
+        </section>
+
+        <section id="lessons">
+          <h2>Lessons</h2>
+          <p>
+            This project was one of my first experiences leading a real development team.
+            <br><br>
+            One of the biggest lessons I learnt is the importance of keeping everyone on the same page. 
+            Because multiple developers were working on different parts of the website, small changes could easily create inconsistencies if they weren't communicated clearly. At one point, conflicting changes even broke the codebase T_T.
+            From that experience, I learned to inform everyone about implementation decisions early on, clarify things before starting work, and make sure everyone understands how the larger view of the project.
+            <br><br>
+            On the front end side, I learnt that building a website
+            has a lot to do with planning the accessibility and readablitly. 
+            You have to think about about how users
+            would navigate the site, how information should be organized, how readble the information is, etc. In the end, accessiblity affects most of the design choices.
+            <br><br>
+            Most importantly, the project gave me experience leading a team, while still learning too!
+            <br><br>
+            But perhaps the most meaningful part of this project was how unexpectedly far it took me. 
+            When I first joined UTQC directors team, I was simply a WebDev team member on a position that explicitly said coding experience 
+            wasn't required. I initially just wanted to see if I could improve the existing WordPress site. A few months later, I found myself leading 
+            the development of an entirely new website, making the 'important' decisions, coordinating with executives, working with other developers, and learning how to manage a project as it evolved.
+            <br><br>
+            All in all, this project made me realize how much I enjoy designing things. The idea that it's hopefully going to represent UTQC for years to come is so fulfilling too! Maybe I'll take up a career in WebDev? 
+          </p>
+        </section>
+
+    </section>
+
+
+    <footer>
+    <div class="footer">
+    <p> Built by Yusyra Hossain. All rights reserved. &copy; </p>
+    </div>
+    </footer>
+
+</body>
+</html>
