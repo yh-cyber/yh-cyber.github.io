@@ -89,7 +89,7 @@ html {
     align-items: center;
     justify-content: space-between; /* Add space between hero text and image */
     width: 80%;
-    margin-top: 50px;
+    margin-top: 60px;
     min-height: 70vh;
     padding: 8% 10%; 
     gap: 60px; /* Add gap between hero text and image */
