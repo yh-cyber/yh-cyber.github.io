@@ -2,7 +2,6 @@
 const words = [
     "CS @ UofT",
     "Software Developer",
-    "Future ML Engineer",
     "Mathematics Lover",
     "Coffee Addict"
 ];
