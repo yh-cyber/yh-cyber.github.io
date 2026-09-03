@@ -200,7 +200,7 @@ html {
 }
 
 .sub-header h3 {
-    margin-top: 45px;
+    margin-top: 50px;
     font-size: 23px;
 }
 
@@ -244,6 +244,17 @@ html {
 
 
 /* Awards Section */
+
+.awards-header h3 {
+    margin-top: 70px;
+    font-size: 23px;
+}
+
+@media (max-width: 700px) {
+    .awards-header h3 {
+        margin-top: 50px;
+    }
+}
 
 .marquee-container{
     overflow: hidden;
@@ -378,6 +389,165 @@ html {
 
 .social2 a:hover {
     color: var(--accent);
+}
+
+
+/* HISTORY CARDS */
+
+.experience-container {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 50px;
+    max-width: 1000px;
+    margin: 50px auto 0;
+}
+
+
+/* LEFT */
+
+.experience-nav {
+    display: flex;
+    flex-direction: column;
+    border-left: 2px solid var(--navback);
+}
+
+.experience-btn {
+    position: relative;
+    background: none;
+    border: none;
+    border-left: 2px solid transparent;
+    padding: 18px 20px;
+    text-align: left;
+    font-family: "Source Code Pro", monospace;
+    font-size: 15px;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.experience-btn:hover {
+    color: var(--white);
+}
+
+.experience-btn.active {
+    color: var(--accent);
+    border-left: 2px solid var(--accent);
+}
+
+
+/*  CARD  */
+.experience-content {
+    position: relative;
+    min-height: 340px;
+}
+
+.experience-card {
+    display: none;
+    background: var(--navback);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 15px;
+    padding: 30px;
+    box-sizing: border-box;
+    animation: experienceFade 0.8s ease;
+}
+
+.experience-card.active {
+    display: block;
+}
+
+
+/* CARD TEXT */
+
+.experience-card h3 {
+    margin: 0 0 8px;
+    color: var(--white);
+    font-size: 24px;
+}
+
+.experience-card h4 {
+    margin: 0 0 5px;
+    color: var(--accent);
+    font-size: 16px;
+}
+
+.experience-date {
+    display: block;
+    margin-bottom: 25px;
+    color: var(--text-secondary);
+    font-size: 14px;
+}
+
+.experience-card p {
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+.experience-card ul {
+    padding-left: 20px;
+    color: var(--text-secondary);
+    line-height: 1.8;
+}
+
+.experience-card li {
+    margin-bottom: 5px;
+}
+
+
+/* EXPERIENCE TAGS */
+
+.experience-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 25px;
+}
+
+.experience-tags span {
+    padding: 6px 12px;
+    border: 1px solid var(--accent);
+    border-radius: 20px;
+    color: var(--accent);
+    font-size: 12px;
+    font-family: "Source Code Pro", monospace;
+}
+
+@keyframes experienceFade {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 700px) {
+    .experience-container {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        margin: 25px auto;
+    }
+    .experience-nav {
+        flex-direction: row;
+        overflow-x: auto;
+        border-left: none;
+        border-bottom: 2px solid var(--navback);
+    }
+    .experience-btn {
+        white-space: nowrap;
+        border-left: none;
+        border-bottom: 2px solid transparent;
+        padding: 12px 16px;
+    }
+    .experience-btn.active {
+        border-left: none;
+        border-bottom: 2px solid var(--accent);
+    }
+    .experience-card {
+        padding: 25px;
+    }
 }
 
 /* CS Projects Section */

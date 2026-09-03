@@ -1,8 +1,9 @@
 // Typewriter Effect
 const words = [
-    "CS Student at UofT St.George",
-    "Aspiring ML Engineer",
-    "Mathematics Enthusiast",
+    "CS @ UofT",
+    "Software Developer",
+    "Future ML Engineer",
+    "Mathematics Lover",
     "Coffee Addict"
 ];
 
@@ -130,4 +131,43 @@ document.querySelectorAll('.poster-image img').forEach(img => {
     img.addEventListener('click', () => {
         img.classList.toggle('zoomed');
     });
+});
+
+
+
+// History Cards Functionality
+
+const experienceButtons =
+    document.querySelectorAll(".experience-btn");
+
+const experienceCards =
+    document.querySelectorAll(".experience-card");
+
+
+experienceButtons.forEach(button => {
+    button.addEventListener("click", () => {
+
+        // Remove active state from all buttons
+        experienceButtons.forEach(btn => {
+            btn.classList.remove("active");
+        });
+
+        // Remove active state from all cards
+        experienceCards.forEach(card => {
+            card.classList.remove("active");
+        });
+
+        // Activate clicked button
+        button.classList.add("active");
+
+        // Find which experience should be shown
+        const target = button.dataset.target;
+
+        const selectedCard =
+            document.getElementById(target);
+
+        // Show selected experience
+        selectedCard.classList.add("active");
+    });
+
 });
