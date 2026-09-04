@@ -664,6 +664,23 @@ html {
 }
 
 .project-info h6 {
+    position: absolute;
+    bottom: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.project-info h6 span {
+    padding: 6px 12px;
+    border: 1px solid var(--accent);
+    border-radius: 20px;
+    color: var(--accent);
+    font-size: 14px;
+    font-family: "Source Code Pro", monospace;
+}
+
+.project-info h5 {
     color: var(--white);
     font-size: 14px;
     position: absolute;
