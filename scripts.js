@@ -1,7 +1,7 @@
 // Typewriter Effect
 const words = [
     "CS @ UofT",
-    "Software Developer",
+    "Software Engineer",
     "Mathematics Lover",
     "Coffee Addict"
 ];
