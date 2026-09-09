@@ -76,10 +76,6 @@ html {
     .socials {
         display: none;
     }
-
-    .navbar a[href*="#passion_projects"] {
-        display: none;
-    }
 }
 
 
