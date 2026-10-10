@@ -1,8 +1,8 @@
 // Typewriter Effect
 const words = [
     "HBCS (CS Specialist) @ UofT",
-    "Software Engineer",
-    "Aspiring ML Engineer",
+    "Software Developer",
+    "Machine Learning Researcher",
     "Coffee Addict"
 ];
 
